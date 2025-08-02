@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -405,3 +406,412 @@
 
   <p style="margin-top: 15px;">&copy; 2025 MuzaGraphics. All Rights Reserved.</p>
 </footer>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MuzaGraphics - Services</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MRB0WV2BL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5MRB0WV2BL');
+  </script>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* Top Bar with contact info */
+    .top-bar {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      font-size: 14px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 30px;
+      width: 100%;
+    }
+
+    /* Navigation Bar */
+    .nav {
+      background-color: #16d23cf3; /* Yellow background to match About page */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      color: #0056a3; /* Blue text for contrast */
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-weight: 600;
+    }
+
+    /* Logo container */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+      color: #0056a3;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    /* Navigation menu centered */
+    .nav-menu {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    ul.menu {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    ul.menu li a {
+      color: #0056a3;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    ul.menu li a:hover,
+    ul.menu li a:focus,
+    ul.menu li a[aria-current="page"] {
+      color: #003366;
+      border-bottom: 2px solid #003366;
+      padding-bottom: 4px;
+    }
+
+    /* Right side login/register */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .nav-right a {
+      color: #0056a3;
+      text-decoration: none;
+      background-color: white;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-right a:hover {
+      background-color: #e6b800;
+      color: #003366;
+      box-shadow: 0 0 8px rgba(230,184,0,0.7);
+    }
+
+    /* Header banner */
+    .header-banner {
+      background-color: #0056a3;
+      color: white;
+      text-align: center;
+      padding: 80px 20px 100px;
+      position: relative;
+      perspective: 800px;
+      overflow: visible;
+      width: 100%;
+    }
+
+    /* 3D style shape around Our Services */
+    .header-banner h1 {
+      font-size: 52px;
+      font-weight: 900;
+      display: inline-block;
+      padding: 20px 50px;
+      background: linear-gradient(145deg, #08306b, #1877f2);
+      border-radius: 20px;
+      box-shadow:
+        6px 6px 15px rgba(0, 0, 0, 0.4),
+        -6px -6px 15px rgba(255, 255, 255, 0.2);
+      transform-style: preserve-3d;
+      transform: rotateX(6deg) rotateY(-6deg);
+      transition: transform 0.3s ease;
+      cursor: default;
+      user-select: none;
+      margin: 0 auto;
+    }
+
+    .header-banner h1:hover {
+      transform: rotateX(0deg) rotateY(0deg);
+      box-shadow:
+        8px 8px 20px rgba(0, 0, 0, 0.6),
+        -8px -8px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Main content section */
+    .section {
+      padding: 60px 20px;
+      width: 100%;
+      max-width: none;
+      margin: 40px 0;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #0056a3;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    /* Cards grid */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .card {
+      padding: 30px 25px;
+      border-radius: 16px;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      background: linear-gradient(135deg, #0056a3, #1877f2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 220px;
+    }
+
+    .card:nth-child(3),
+    .card:nth-child(5) {
+      background: linear-gradient(135deg, #fcb900, #f9d342);
+      color: #333;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(24, 115, 230, 0.6);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0056a3;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar with contact info -->
+<div class="top-bar">
+  <div>📞 0787110886</div>
+  <div>📧 bmuzatsinda@gmail.com</div>
+</div>
+
+<!-- Navigation bar -->
+<nav class="nav">
+  <div class="logo">
+    <img src="mylogo.jpg" alt="MuzaGraphics Logo" />
+    <span>MuzaGraphics</span>
+  </div>
+
+  <div class="nav-menu">
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" aria-current="page">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-right">
+    <a href="#" onclick="toggleForm('login-form')">Login</a>
+    <a href="#" onclick="toggleForm('register-form')">Register</a>
+  </div>
+</nav>
+
+<!-- Login Form -->
+<div id="login-form" class="form-popup">
+  <form class="form-container">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username or Email" required />
+    <input type="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+    <a href="#">Forgot password?</a>
+    <button type="button" class="cancel" onclick="toggleForm('login-form')">Close</button>
+  </form>
+</div>
+
+<!-- Register Form -->
+<div id="register-form" class="form-popup">
+  <form class="form-container">
+    <h2>Register</h2>
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Password" required />
+    <button type="submit">Register</button>
+    <button type="button" class="cancel" onclick="toggleForm('register-form')">Close</button>
+  </form>
+</div>
+
+<!-- Style and Script -->
+<style>
+  .form-popup {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 2px solid #ccc;
+    z-index: 999;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 300px;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-container input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .form-container button {
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .form-container .cancel {
+    background-color: #ccc;
+  }
+
+  .form-container a {
+    text-align: right;
+    font-size: 13px;
+    color: #007BFF;
+    text-decoration: none;
+  }
+</style>
+
+<script>
+  function toggleForm(formId) {
+    const loginForm = document.getElementById("login-form");
+    const registerForm = document.getElementById("register-form");
+
+    if (formId === "login-form") {
+      loginForm.style.display = loginForm.style.display === "block" ? "none" : "block";
+      registerForm.style.display = "none";
+    } else if (formId === "register-form") {
+      registerForm.style.display = registerForm.style.display === "block" ? "none" : "block";
+      loginForm.style.display = "none";
+    }
+  }
+</script>
+
+
+  <!-- Header banner with 3D shaped title -->
+  <div class="header-banner">
+    <h1>Our Services</h1>
+  </div>
+
+  <!-- Services section -->
+  <div class="section">
+    <div class="cards">
+      <div class="card">
+        <h3>Logo Design</h3>
+        <p>We create unique and professional logos that represent your brand identity globally.</p>
+      </div>
+      <div class="card">
+        <h3>Web Design</h3>
+        <p>Modern, responsive websites that attract and engage your audience across all devices.</p>
+      </div>
+      <div class="card">
+        <h3>Branding</h3>
+        <p>Complete brand packages including color schemes, typography, and visual identity systems.</p>
+      </div>
+      <div class="card">
+        <h3>Social Media Graphics</h3>
+        <p>High-quality graphics tailored for your social platforms to boost your online presence.</p>
+      </div>
+      <div class="card">
+        <h3>Print Design</h3>
+        <p>Flyers, business cards, brochures and more — print-ready and impactful designs.</p>
+      </div>
+      <div class="card">
+        <h3>Consultation</h3>
+        <p>Get expert advice on visual strategy and how to elevate your brand through design.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+<footer style="background-color: #002855; text-align: center; padding: 30px 20px; color: #fff; font-family: 'Segoe UI', sans-serif; font-size: 14px; margin-top: 50px; border-top: 2px solid #ccc; font-weight: bold;">
+  <h4 style="margin-bottom: 5px; font-size: 20px; color: #ffffff;">MuzaGraphics</h4>
+  <p>International Graphic Design Studio</p>
+  <p>RWANDA / KAMONYI / RUNDA / RUYENZI</p>
+
+  <div style="margin: 10px 0;">
+    <a href="https://facebook.com/YourPage" target="_blank" style="text-decoration: none; margin: 0 8px; color: #3b5998;">Facebook</a> |
+    <a href="https://instagram.com/YourPage" target="_blank" style="text-decoration: none; margin: 0 8px; color: #E1306C;">Instagram</a> |
+    <a href="https://www.youtube.com/channel/UCP-grIwZBvYN3jAYOARZ1hA" target="_blank" style="text-decoration: none; margin: 0 8px; color: #FF0000;">YouTube</a> |
+    <a href="https://wa.me/250787110886" target="_blank" style="text-decoration: none; margin: 0 8px; color: #25D366;">WhatsApp</a>
+  </div>
+
+  <p style="margin-top: 15px;">&copy; 2025 MuzaGraphics. All Rights Reserved.</p>
+</footer>
+>>>>>>> 155f635a402e63739a2b5a129e912a7bba05f7b1

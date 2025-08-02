@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -525,3 +526,532 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MuzaGraphics | Gallery</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MRB0WV2BL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5MRB0WV2BL');
+  </script>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #020063;
+      color: #0056a3;
+    }
+
+    /* Top Bar with contact info */
+    .contact-info {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #16d23cf3; /* Yellow background */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      color: #0056a3;
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 24px;
+      cursor: pointer;
+      color: #0056a3;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #0056a3;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+      padding-bottom: 4px;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a:focus,
+    .nav-links li a.active {
+      color: #003366;
+      border-bottom: 2px solid #003366;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .actions input[type="search"] {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .btn {
+      background-color: white;
+      color: #0056a3;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e6b800;
+      color: #003366;
+      box-shadow: 0 0 8px rgba(230,184,0,0.7);
+    }
+
+    /* Gallery Section */
+    .gallery {
+      padding: 40px 20px;
+      background-color: #eaf2fb;
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery h2 {
+      color: #0a3c73;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery-item {
+      background: linear-gradient(145deg, #0a3c73, #0d4a90);
+      color: #fff;
+      border-radius: 15px;
+      box-shadow: 8px 8px 15px rgba(0,0,0,0.3);
+      overflow: hidden;
+      user-select: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-item p {
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #00264d;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      user-select: none;
+    }
+
+    footer h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    footer p, footer a {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    footer .socials {
+      margin-top: 20px;
+    }
+
+    footer .socials a {
+      margin: 0 10px;
+      font-size: 20px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    footer .socials a:hover {
+      color: #fcb900;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top contact info -->
+  <div class="contact-info">
+    <span>Phone: 0787110886</span> |
+    <span>Email: bmuzatsinda@gmail.com</span>
+  </div>
+
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="mylogo.jpg" alt="MuzaGraphics Logo" />
+      <span class="brand-name">MuzaGraphics</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html" onclick="closeForm()">Home</a></li>
+      <li><a href="about.html" onclick="closeForm()">About</a></li>
+      <li><a href="services.html" onclick="closeForm()">Services</a></li>
+      <li><a href="gallery.html" class="active" onclick="closeForm()">Gallery</a></li>
+      <li><a href="contact.html" onclick="closeForm()">Contact</a></li>
+    </ul>
+
+    <div class="actions">
+      <input type="search" placeholder="Search..." />
+      <button class="btn" onclick="showForm('login')">Login</button>
+      <button class="btn" onclick="showForm('register')">Register</button>
+    </div>
+  </nav>
+
+  <!-- Modal Forms -->
+  <div id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+    background-color:rgba(0,0,0,0.6); z-index:9999; display:flex; justify-content:center; align-items:center;">
+    <div id="form-content" style="background:#fff; padding:30px; border-radius:8px; width:90%; max-width:400px; position:relative;">
+      <span onclick="closeForm()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
+
+      <!-- Login -->
+      <div id="login-form" style="display:none;">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
+        <input type="password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
+        <button type="submit" style="width:100%; padding:10px;">Login</button>
+        <p style="margin-top:10px;"><a href="#" onclick="showForm('forgot')">Forgot Password?</a></p>
+      </div>
+
+      <!-- Register -->
+      <div id="register-form" style="display:none;">
+        <h2>Register</h2>
+
+        <!-- Success message -->
+        <div id="register-success" style="display:none; color: green; margin-bottom: 10px;">
+          ✅ Registered successfully!
+        </div>
+
+        <input type="text" id="reg-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;" />
+        <input type="email" id="reg-email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
+        <input type="password" id="reg-password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
+
+        <button onclick="submitRegister()" style="width:100%; padding:10px;">Register</button>
+      </div>
+
+      <!-- Forgot -->
+      <div id="forgot-form" style="display:none;">
+        <h2>Reset Password</h2>
+        <input type="email" placeholder="Enter your email" required style="width:100%; padding:10px; margin:10px 0;" />
+        <button type="submit" style="width:100%; padding:10px;">Send Reset Link</button>
+      </div>
+    </div>
+  </div>
+
+ <div style="perspective: 1000px; display: flex; justify-content: center; margin-bottom: 20px;">
+  <div style="
+      background: linear-gradient(145deg, #0a3c73, #0d4a90);
+      color: white;
+      padding: 20px 40px;
+      border-radius: 20px;
+      box-shadow: 8px 8px 20px rgba(0,0,0,0.4), -8px -8px 20px rgba(255,255,255,0.05);
+      font-size: 28px;
+      font-weight: bold;
+      animation: zoomInOut 3s ease-in-out infinite;
+      transform-style: preserve-3d;
+      text-align: center;
+    ">
+    Our Portfolio Gallery
+  </div>
+</div>
+
+<style>
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1) rotateY(0deg);
+    }
+    50% {
+      transform: scale(1.05) rotateY(3deg);
+    }
+    100% {
+      transform: scale(1) rotateY(0deg);
+    }
+  }
+</style>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item">
+      <img src="myportfolio.jpg" alt="Portfolio Image" class="clickable-img" />
+      <p>A showcase of diverse graphic design works tailored for international clients.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="mybanner2.jpg" alt="Banner Image" class="clickable-img" />
+      <p>Professional banner design optimized for brand visibility and marketing impact.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="myflayer.jpg" alt="Flyer Design" class="clickable-img" />
+      <p>Creative flyer layout designed to communicate clearly and attractively.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="mybusinesscarddesign.jpg" alt="Business Card Design" class="clickable-img" />
+      <p>Modern business card concept crafted for strong brand identity and networking.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="mylogo.jpg" alt="Logo Design" class="clickable-img" />
+      <p>Custom logo crafted to represent brand identity across platforms.</p>
+    </div>
+
+    <div class="gallery-item">
+      <video controls>
+        <source src="myportfolio-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <p>Video presentation of selected design projects created by MuzaGraphics.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="ADposter.jpg" alt="AD Poster" class="clickable-img" />
+      <p>Advertising poster created to visually attract and promote a brand or service.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Application poster.jpg" alt="Application Poster" class="clickable-img" />
+      <p>Poster design tailored to advertise mobile or desktop applications effectively.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Certificate.jpg" alt="Certificate Design" class="clickable-img" />
+      <p>Custom certificate layout designed with elegance and formality for awards or training programs.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Certificate2.jpg" alt="Certificate Design 2" class="clickable-img" />
+      <p>Elegant certificate design crafted for special recognition and achievements.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Envitation.jpg" alt="Invitation Card" class="clickable-img" />
+      <p>Stylish invitation card suitable for weddings, events, or formal occasions.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Mug Printing.jpg" alt="Mug Printing Design" class="clickable-img" />
+      <p>Creative mug print design perfect for gifts, branding, or custom orders.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="MUNU.jpg" alt="MUNU Design" class="clickable-img" />
+      <p>Professional artwork titled ‘MUNU’, showing creativity and visual impact.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="myCVs.jpg" alt="My CVs Design" class="clickable-img" />
+      <p>Clean and professional CV layouts designed to impress recruiters.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="myposter1a.jpg" alt="Poster Design 1A" class="clickable-img" />
+      <p>High-impact poster created for promotional use with eye-catching graphics.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Product Labeling.jpg" alt="Product Labeling" class="clickable-img" />
+      <p>Modern product label design highlighting branding and clear packaging identity.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="salonposterAD.jpg" alt="Salon Poster Ad" class="clickable-img" />
+      <p>Eye-catching salon poster designed to attract clients with elegance and clarity.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="SCHOOL AD1A.jpg" alt="School Advertisement" class="clickable-img" />
+      <p>Vibrant school advertisement designed to promote educational services effectively.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="SCHOOL LOGO.jpg" alt="School Logo" class="clickable-img" />
+      <p>Official school logo design tailored for educational branding and identity.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="schoolAD.jpg" alt="School Ad Poster" class="clickable-img" />
+      <p>Creative school advertisement poster to increase visibility and enrollment.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="schoolAd3.jpg" alt="School Ad Version 3" class="clickable-img" />
+      <p>Advanced school promotion poster crafted for modern educational outreach.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Thumbnail.jpg" alt="Video Thumbnail Design" class="clickable-img" />
+      <p>Eye-catching YouTube thumbnail designed to boost video engagement and branding.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="salonbanner.jpg" alt="Salon Banner Design" class="clickable-img" />
+      <p>Professional salon banner design tailored to attract clients and promote services.</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="webdesign.jpg" alt="Website Design Sample" class="clickable-img" />
+      <p>Modern and responsive website layout designed for international-level client presentation.</p>
+    </div>
+
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000; cursor:pointer;">
+    <img id="lightbox-img" src="" alt="Expanded Image" style="max-width:90%; max-height:90%; border-radius:10px;" />
+  </div>
+</section>
+
+<script>
+  // Fungura lightbox igihe ukande ku ifoto ifite class clickable-img
+  document.querySelectorAll('.clickable-img').forEach(img => {
+    img.addEventListener('click', event => {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = event.target.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  // Fungura lightbox click ifungwa iyo ukande ahandi hanze y'ifoto
+  document.getElementById('lightbox').addEventListener('click', event => {
+    if (event.target.id === 'lightbox') {
+      event.target.style.display = 'none';
+      document.getElementById('lightbox-img').src = '';
+    }
+  });
+</script>
+
+  <!-- Footer -->
+<footer style="background-color: #002855; text-align: center; padding: 30px 20px; color: #fff; font-family: 'Segoe UI', sans-serif; font-size: 14px; margin-top: 50px; border-top: 2px solid #ccc; font-weight: bold;">
+  <h4 style="margin-bottom: 5px; font-size: 20px; color: #ffffff;">MuzaGraphics</h4>
+  <p>International Graphic Design Studio</p>
+  <p>RWANDA / KAMONYI / RUNDA / RUYENZI</p>
+
+  <div style="margin: 10px 0;">
+    <a href="https://facebook.com/YourPage" target="_blank" style="text-decoration: none; margin: 0 8px; color: #3b5998;">Facebook</a> |
+    <a href="https://instagram.com/YourPage" target="_blank" style="text-decoration: none; margin: 0 8px; color: #E1306C;">Instagram</a> |
+    <a href="https://www.youtube.com/channel/UCP-grIwZBvYN3jAYOARZ1hA" target="_blank" style="text-decoration: none; margin: 0 8px; color: #FF0000;">YouTube</a> |
+    <a href="https://wa.me/250787110886" target="_blank" style="text-decoration: none; margin: 0 8px; color: #25D366;">WhatsApp</a>
+  </div>
+
+  <p style="margin-top: 15px;">&copy; 2025 MuzaGraphics. All Rights Reserved.</p>
+</footer>
+
+
+  <!-- JavaScript -->
+  <script>
+    function showForm(type) {
+      document.getElementById('form-overlay').style.display = 'flex';
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('register-form').style.display = 'none';
+      document.getElementById('forgot-form').style.display = 'none';
+
+      if (type === 'login') {
+        document.getElementById('login-form').style.display = 'block';
+      } else if (type === 'register') {
+        document.getElementById('register-form').style.display = 'block';
+      } else if (type === 'forgot') {
+        document.getElementById('forgot-form').style.display = 'block';
+      }
+    }
+
+    function closeForm() {
+      document.getElementById('form-overlay').style.display = 'none';
+    }
+
+    function submitRegister() {
+      document.getElementById('register-success').style.display = 'block';
+
+      // Clear inputs
+      document.getElementById('reg-name').value = "";
+      document.getElementById('reg-email').value = "";
+      document.getElementById('reg-password').value = "";
+
+      setTimeout(() => {
+        document.getElementById('register-success').style.display = 'none';
+      }, 3000);
+    }
+
+    window.onload = function () {
+      closeForm();
+    }
+  </script>
+</body>
+</html>
+>>>>>>> 155f635a402e63739a2b5a129e912a7bba05f7b1

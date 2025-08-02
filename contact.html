@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -349,3 +350,356 @@
 
   <p style="margin-top: 15px;">&copy; 2025 MuzaGraphics. All Rights Reserved.</p>
 </footer>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us – MuzaGraphics</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Analytics tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MRB0WV2BL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5MRB0WV2BL');
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-info {
+      background-color: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 8px 20px;
+      font-size: 14px;
+    }
+
+    .auth-links {
+      float: right;
+    }
+
+    .auth-links a {
+      color: #fff;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+
+    .navbar {
+      background-color: #16d23cf3;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin: 0 10px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links .active {
+      text-decoration: underline;
+    }
+
+    .search-bar input {
+      padding: 5px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    #contact {
+      padding: 40px 20px;
+      background-color: #f0f0f0;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+
+    .contact-card {
+      background-color: #003366;
+      color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      margin: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .contact-card h2 {
+      margin-top: 0;
+      color: #fff;
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .contact-card button {
+      background-color: #ffcc00;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact-card a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
+    .map-container {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .half-circle {
+      width: 100%;
+      height: 100px;
+      background-color: #003366;
+      border-top-left-radius: 100px;
+      border-top-right-radius: 100px;
+      margin-top: -50px;
+    }
+
+    footer {
+      background-color: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+</head>
+<body>
+<!-- Top contact info -->
+<div class="contact-info" style="text-align: left;">
+  <span>Phone: 0787110886</span>
+  <span style="float: left;">Email: bmuzatsinda@gmail.com</span>
+</div>
+
+<!-- Navigation bar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="mylogo.jpg" alt="MuzaGraphics Logo" />
+    <span class="brand-name">MuzaGraphics</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html" onclick="closeForm()">Home</a></li>
+    <li><a href="about.html" onclick="closeForm()">About</a></li>
+    <li><a href="services.html" onclick="closeForm()">Services</a></li>
+    <li><a href="gallery.html" onclick="closeForm()">Gallery</a></li>
+    <li><a href="contact.html" onclick="closeForm()">Contact</a></li>
+  </ul>
+
+  <div class="actions">
+    <input type="search" placeholder="Search..." />
+    <button class="btn" onclick="showForm('login')">Login</button>
+    <button class="btn" onclick="showForm('register')">Register</button>
+  </div>
+</nav>
+
+<!-- Modal Forms -->
+<div id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+  background-color:rgba(0,0,0,0.6); z-index:9999; display:flex; justify-content:center; align-items:center;">
+  <div id="form-content" style="background:#fff; padding:30px; border-radius:8px; width:90%; max-width:400px; position:relative;">
+    <span onclick="closeForm()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
+
+    <!-- Login -->
+    <div id="login-form" style="display:none;">
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
+      <input type="password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
+      <button type="submit" style="width:100%; padding:10px;">Login</button>
+      <p style="margin-top:10px;"><a href="#" onclick="showForm('forgot')">Forgot Password?</a></p>
+    </div>
+
+    <!-- Register -->
+<div id="register-form" style="display:none;">
+  <h2>Register</h2>
+
+  <!-- Success message -->
+  <div id="register-success" style="display:none; color: green; margin-bottom: 10px;">
+    ✅ Registered successfully!
+  </div>
+
+  <!-- Input fields -->
+  <input type="text" id="reg-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;" />
+  <input type="email" id="reg-email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
+  <input type="password" id="reg-password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
+
+  <!-- Register button -->
+  <button onclick="submitRegister()" style="width:100%; padding:10px;">Register</button>
+</div>
+
+<!-- JavaScript inside the same HTML -->
+<script>
+  function submitRegister() {
+    // Show the success message
+    document.getElementById('register-success').style.display = 'block';
+
+    // Clear form inputs (optional)
+    document.getElementById('reg-name').value = "";
+    document.getElementById('reg-email').value = "";
+    document.getElementById('reg-password').value = "";
+
+    // Hide the message after 3 seconds
+    setTimeout(() => {
+      document.getElementById('register-success').style.display = 'none';
+    }, 3000);
+  }
+</script>
+
+
+    <!-- Forgot -->
+    <div id="forgot-form" style="display:none;">
+      <h2>Reset Password</h2>
+      <input type="email" placeholder="Enter your email" required style="width:100%; padding:10px; margin:10px 0;" />
+      <button type="submit" style="width:100%; padding:10px;">Send Reset Link</button>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function showForm(type) {
+    document.getElementById('form-overlay').style.display = 'flex';
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('register-form').style.display = 'none';
+    document.getElementById('forgot-form').style.display = 'none';
+
+    if (type === 'login') {
+      document.getElementById('login-form').style.display = 'block';
+    } else if (type === 'register') {
+      document.getElementById('register-form').style.display = 'block';
+    } else if (type === 'forgot') {
+      document.getElementById('forgot-form').style.display = 'block';
+    }
+  }
+
+  function closeForm() {
+    document.getElementById('form-overlay').style.display = 'none';
+  }
+
+  // Close modal automatically on page load (in case it was left open)
+  window.onload = function () {
+    closeForm();
+  }
+</script>
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <div class="contact-card contact-form">
+        <h2>Get in Touch</h2>
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="contact-card contact-details">
+        <h2>Contact Details</h2>
+        <p><strong>Phone:</strong> <a href="tel:+250787110886">0787110886</a></p>
+        <p><strong>Email:</strong> <a href="mailto:bmuzatsinda@gmail.com">bmuzatsinda@gmail.com</a></p>
+        <p><strong>Location:</strong> Rwanda / Kamonyi / Ruyenzi</p>
+      </div>
+    </div><img src="mycontact.jpg" alt="contact" />
+
+    <!-- Google Map -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.9932039711336!2d29.786279315347542!3d-2.223246298761503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d1122053a1790f%3A0x5d84e8a8d04062e2!2sChrishotel!5e0!3m2!1sen!2srw!4v1690046500000!5m2!1sen!2srw"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <!-- Blue Half Circle -->
+    <div class="half-circle"></div>
+  </section>
+
+ <!-- Footer -->
+<footer style="background-color: #002855; text-align: center; padding: 30px 20px; color: #fff; font-family: 'Segoe UI', sans-serif; font-size: 14px; margin-top: 50px; border-top: 2px solid #ccc; font-weight: bold;">
+  <h4 style="margin-bottom: 5px; font-size: 20px; color: #ffffff;">MuzaGraphics</h4>
+  <p>International Graphic Design Studio</p>
+  <p>RWANDA / KAMONYI / RUNDA / RUYENZI</p>
+
+  <div style="margin: 10px 0;">
+    <a href="https://facebook.com/YourPage" target="_blank" style="text-decoration: none; margin: 0 8px; color: #3b5998;">Facebook</a> |
+    <a href="https://instagram.com/YourPage" target="_blank" style="text-decoration: none; margin: 0 8px; color: #E1306C;">Instagram</a> |
+    <a href="https://www.youtube.com/channel/UCP-grIwZBvYN3jAYOARZ1hA" target="_blank" style="text-decoration: none; margin: 0 8px; color: #FF0000;">YouTube</a> |
+    <a href="https://wa.me/250787110886" target="_blank" style="text-decoration: none; margin: 0 8px; color: #25D366;">WhatsApp</a>
+  </div>
+
+  <p style="margin-top: 15px;">&copy; 2025 MuzaGraphics. All Rights Reserved.</p>
+</footer>
+>>>>>>> 155f635a402e63739a2b5a129e912a7bba05f7b1

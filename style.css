@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Navigation Bar */
 .navbar {
   background-color: #0057B7; /* Blue */
@@ -46,3 +47,53 @@ footer {
   text-align: center;
   padding: 15px 0;
 }
+=======
+/* Navigation Bar */
+.navbar {
+  background-color: #0057B7; /* Blue */
+  display: flex;
+  align-items:left;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar .nav-links li a.active {
+  background-color: #003f8a; /* Darker blue */
+  border-radius: 5px;
+}
+
+/* Contact Cards */
+.contact-card {
+  background-color: #e6f0ff; /* light blue */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Half Circle */
+.half-circle {
+  width: 100%;
+  height: 100px;
+  background-color: #0057B7;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  margin-top: 30px;
+}
+
+/* Footer */
+footer {
+  background-color: #003f8a;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+>>>>>>> 155f635a402e63739a2b5a129e912a7bba05f7b1

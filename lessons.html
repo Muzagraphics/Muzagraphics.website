@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -179,3 +180,186 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MuzaGraphics | Lessons</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: #004aad;
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN SECTIONS */
+    .lessons-section,
+    .registration-section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .lessons-section h2,
+    .registration-section h2 {
+      font-size: 28px;
+      color: #004aad;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .lesson-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .lesson {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .lesson h3 {
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    /* REGISTRATION FORM */
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #004aad;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    form button:hover {
+      background-color: #00337a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="lessons.html">Lessons</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- LESSONS SECTION -->
+  <section class="lessons-section">
+    <h2>📚 Graphic Design Lessons</h2>
+    <div class="lesson-list">
+      <div class="lesson">
+        <h3>1. Introduction to Graphic Design</h3>
+        <p>Learn the fundamentals of design principles, color theory, and visual communication.</p>
+      </div>
+      <div class="lesson">
+        <h3>2. Adobe Photoshop Basics</h3>
+        <p>Master the essential tools and techniques in Photoshop.</p>
+      </div>
+      <div class="lesson">
+        <h3>3. Adobe Illustrator for Logos</h3>
+        <p>Design professional logos using vector tools and techniques.</p>
+      </div>
+      <!-- More lessons can be added here -->
+    </div>
+  </section>
+
+  <!-- REGISTRATION SECTION -->
+  <section class="registration-section">
+    <h2>📝 Register for Graphic Design Training</h2>
+    <p style="text-align: center; margin-bottom: 20px;">
+      Pay <strong>5,000 RWF</strong> to <strong>0787110886 (Mobile Money)</strong> and fill out the form below:
+    </p>
+    <form action="#" method="post">
+      <label>Full Name:</label>
+      <input type="text" name="name" required />
+
+      <label>Phone Number:</label>
+      <input type="tel" name="phone" required />
+
+      <label>Email Address:</label>
+      <input type="email" name="email" required />
+
+      <label>Transaction ID:</label>
+      <input type="text" name="transaction_id" required />
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </section>
+
+</body>
+</html>
+>>>>>>> 155f635a402e63739a2b5a129e912a7bba05f7b1
