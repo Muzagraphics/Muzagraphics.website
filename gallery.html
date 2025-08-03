@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MuzaGraphics | Gallery</title>
+  <title>MuzaGraphics | Gallery</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MRB0WV2BL"></script>
@@ -222,11 +223,19 @@
   </style>
 </head>
 <body>
-  <!-- Top contact info -->
+  <div class="top-contact-social">
   <div class="contact-info">
     <span>Phone: 0787110886</span> |
     <span>Email: bmuzatsinda@gmail.com</span>
   </div>
+  <div class="social-icons">
+    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+
 
   <!-- Navigation bar -->
   <nav class="navbar">
@@ -307,7 +316,47 @@
   </div>
 </div>
 
-<style>
+<style>.top-contact-social {
+  display: flex;
+  align-items: center;
+  background-color: #004080;
+  padding: 8px 20px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+}
+
+.contact-info {
+  display: flex;
+  gap: 8px;
+}
+
+.social-icons {
+  margin-left: auto; /* iyi ituma social icons zijya iburyo */
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border: 1px solid #004080;
+  border-radius: 4px;
+  color: #004080;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #fcb900;
+  color: #004080;
+}
+
   @keyframes zoomInOut {
     0% {
       transform: scale(1) rotateY(0deg);
@@ -532,7 +581,21 @@
 </body>
 </html>
 <!-- WhatsApp Floating Chat -->
-<style>
+<style>/* Responsive Gallery Grid */
+@media screen and (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr !important; /* Imbere mu mashusho, 1 column kuri mobile */
+    gap: 15px !important; /* Gap ntoya kuri mobile */
+  }
+
+  .gallery-item img,
+  .gallery-item video {
+    height: auto; /* Height yihindura ikurikije width ku mobile */
+    max-height: 250px; /* Ubu bugari ntarengwa bwiza ku mashusho kuri telefoni */
+    object-fit: cover;
+  }
+}
+
   .whatsapp-float {
     position: fixed;
     bottom: 25px;
