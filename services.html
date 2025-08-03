@@ -405,3 +405,48 @@
 
   <p style="margin-top: 15px;">&copy; 2025 MuzaGraphics. All Rights Reserved.</p>
 </footer>
+<!-- WhatsApp Floating Chat -->
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #1ebd5b;
+  }
+
+  @media screen and (max-width: 500px) {
+    .whatsapp-float {
+      font-size: 14px;
+      padding: 10px 16px;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+</style>
+
+<a href="https://wa.me/250787110886?text=Hello%20MuzaGraphics%2C%20I%20need%20your%20design%20services" 
+   class="whatsapp-float" target="_blank" 
+   aria-label="Chat with us on WhatsApp">
+  💬 Chat with us
+</a>
+
+<script>
+  window.onload = () => {
+    setTimeout(() => {
+      alert("👋 Welcome to MuzaGraphics!\nHow can we assist you today?");
+    }, 3000);
+  };
+</script>
