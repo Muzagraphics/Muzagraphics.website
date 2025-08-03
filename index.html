@@ -20,7 +20,16 @@
   <!-- Font Awesome for Social Media -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <style>
+  <style>@media (max-width: 768px) {
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
     * {
 
       margin: 0;
@@ -393,7 +402,6 @@
   <span>Phone: 0787110886</span>
   <span style="margin-left: 20px;">Email: bmuzatsinda@gmail.com</span>
 </div>
-
 <!-- Navigation bar -->
 <nav class="navbar">
   <div class="logo">
@@ -432,41 +440,19 @@
     </div>
 
     <!-- Register -->
-<div id="register-form" style="display:none;">
-  <h2>Register</h2>
+    <div id="register-form" style="display:none;">
+      <h2>Register</h2>
 
-  <!-- Success message -->
-  <div id="register-success" style="display:none; color: green; margin-bottom: 10px;">
-    ✅ Registered successfully!
-  </div>
+      <div id="register-success" style="display:none; color: green; margin-bottom: 10px;">
+        ✅ Registered successfully!
+      </div>
 
-  <!-- Input fields -->
-  <input type="text" id="reg-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;" />
-  <input type="email" id="reg-email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
-  <input type="password" id="reg-password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
+      <input type="text" id="reg-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;" />
+      <input type="email" id="reg-email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
+      <input type="password" id="reg-password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
 
-  <!-- Register button -->
-  <button onclick="submitRegister()" style="width:100%; padding:10px;">Register</button>
-</div>
-
-<!-- JavaScript inside the same HTML -->
-<script>
-  function submitRegister() {
-    // Show the success message
-    document.getElementById('register-success').style.display = 'block';
-
-    // Clear form inputs (optional)
-    document.getElementById('reg-name').value = "";
-    document.getElementById('reg-email').value = "";
-    document.getElementById('reg-password').value = "";
-
-    // Hide the message after 3 seconds
-    setTimeout(() => {
-      document.getElementById('register-success').style.display = 'none';
-    }, 3000);
-  }
-</script>
-
+      <button onclick="submitRegister()" style="width:100%; padding:10px;">Register</button>
+    </div>
 
     <!-- Forgot -->
     <div id="forgot-form" style="display:none;">
@@ -498,11 +484,20 @@
     document.getElementById('form-overlay').style.display = 'none';
   }
 
-  // Close modal automatically on page load (in case it was left open)
+  function submitRegister() {
+    document.getElementById('register-success').style.display = 'block';
+    document.getElementById('reg-name').value = "";
+    document.getElementById('reg-email').value = "";
+    document.getElementById('reg-password').value = "";
+
+    setTimeout(() => {
+      document.getElementById('register-success').style.display = 'none';
+    }, 3000);
+  }
+
   window.onload = function () {
     closeForm();
   }
-</script>
 </script>
 
 
