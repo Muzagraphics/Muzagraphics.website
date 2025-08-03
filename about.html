@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - MuzaGraphics</title>
+  <title>About Us </title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
   <!-- Google Analytics tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MRB0WV2BL"></script>
@@ -11,112 +12,174 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-5MRB0WV2BL');
   </script>
 
-</head>
+  <style>.rotated-title-yellow-3d {
+  color: yellow;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  animation: rotate3D 5s infinite linear;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
 
-  <style>
+@keyframes rotate3D {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+.rotating-box {
+  background-color: #0b90a4;
+  padding: 30px;
+  border-radius: 100px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  margin: 30px auto;
+  max-width: 400px;
+}
+
+    /* General body and watermark */
     body {
       background-color: #f4f6fa;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      position: relative;
-      /* Logo watermark background via pseudo element */
+      margin: 0; padding: 0; position: relative;
     }
-
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-image: url('mylogo.jpg'); /* <-- Hano shyiramo izina rya logo yawe */
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-image: url('mylogo.jpg');
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: 300px 300px; /* Hindura ubunini niba ushaka */
+      background-size: 300px 300px;
       opacity: 0.1;
       z-index: -1;
       pointer-events: none;
     }
 
+    /* Top contact info */
     .contact-info {
       background-color: #0056a3;
       color: white;
       padding: 8px 20px;
       font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .contact-info span {
+      margin: 2px 0;
     }
 
-    .navbar {
+    /* Navbar */
+    nav.navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #16d23cf3;  /* Yellow background */
+      background-color: #16d23cf3;
       padding: 15px 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
     .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 40px;
-      margin-right: 10px;
-    }
-
-    .brand-name {
-      font-weight: bold;
-      font-size: 22px;
-      color: #0056a3; /* Blue text */
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links li a {
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
-
-    .nav-links li a:hover {
-      color: #0056a3;
-    }
-
-    .actions {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-
+    .logo img {
+      height: 40px;
+      display: block;
+    }
+    .brand-name {
+      font-weight: bold;
+      font-size: 22px;
+      color: #0056a3;
+      user-select: none;
+    }
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 10px 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    ul.nav-links li a {
+      text-decoration: none;
+      color: #003366;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    ul.nav-links li a:hover,
+    ul.nav-links li a:focus {
+      color: #003366;
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .actions input[type="search"] {
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      min-width: 160px;
+    }
     .btn {
       background-color: #0056a3;
       color: white;
       border: none;
-      padding: 8px 14px;
-      border-radius: 4px;
+      padding: 8px 16px;
+      border-radius: 5px;
       font-size: 14px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover,
+    .btn:focus {
+      background-color: #003d7a;
+      outline: none;
     }
 
-    .search-bar input[type="search"] {
-      padding: 6px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+    /* Responsive menu toggle (if needed in future) */
+    @media (max-width: 768px) {
+      nav.navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      ul.nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+      .actions {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .actions input[type="search"] {
+        flex-grow: 1;
+        min-width: 0;
+      }
     }
 
-    /* Half Circle Blue Shape */
+    /* Top Blue Half-Circle with Title */
     .top-circle {
       width: 100%;
       height: 300px;
@@ -126,88 +189,253 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 40px;
     }
-
     .top-circle h2 {
       color: white;
       font-size: 42px;
       letter-spacing: 3px;
       text-transform: uppercase;
       font-weight: bold;
+      margin: 0;
     }
 
-    /* About cards */
-    #about {
+    /* Founder message */
+    #founder-message {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 30px;
+      background-color: #ffcb05;
+      color: #000;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #founder-message h3 {
+      font-size: 26px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #0b90a4;
+      letter-spacing: 1px;
+    }
+    #founder-message p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Timeline */
+    .timeline-section {
+      background-color: #0b90a4;
+      padding: 40px 30px;
+      border-radius: 15px;
+      color: white;
+      max-width: 900px;
+      margin: 40px auto;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .timeline-section h3 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+    .timeline-section h3 span {
+      color: #ffe600;
+    }
+    .timeline-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .timeline-list li {
+      padding: 12px 0;
+      font-size: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: flex-start;
+    }
+    .year {
+      display: inline-block;
+      width: 80px;
+      font-weight: bold;
+      color: #ffe600;
+      flex-shrink: 0;
+    }
+
+    /* About Cards Container */
+    .about-container {
+      display: flex;
+      justify-content: center;
+      padding: 50px 20px;
+      background-color: #0b90a4;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 960px;
+      margin: 0 auto 60px;
+    }
+    .main-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      max-width: 850px;
+      width: 100%;
+    }
+    .card {
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .light-blue-card {
+      background-color: #cceeff;
+    }
+    .blue-title {
+      color: #0b90a4;
+      margin-bottom: 10px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .yellow-title {
+      color: #ffe600;
+      margin-bottom: 10px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .card p {
+      color: white;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .light-blue-card p {
+      color: #000;
+    }
+
+    /* Unique Section */
+    .unique-section {
+      background-color: #f9fbff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .unique-section .container {
       max-width: 1000px;
       margin: auto;
-      padding: 50px 20px;
+    }
+    .rotated-title-yellow-3d {
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 2.5rem;
+      display: inline-block;
+      animation: spin3D 4s linear infinite;
+      transform-style: preserve-3d;
+      margin-bottom: 15px;
+    }
+    @keyframes spin3D {
+      0% { transform: perspective(600px) rotateY(0deg); }
+      100% { transform: perspective(600px) rotateY(360deg); }
+    }
+    .intro-blue-bold {
+      color: #002147;
+      font-weight: bold;
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+    }
+    .feature-box {
+      background-color: #0b90a4;
+      color: white;
+      border-left: 5px solid #ffd700;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      text-align: left;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+    .feature-box h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .feature-box p {
+      font-size: 16px;
+      margin: 0;
     }
 
-    .about-card {
+    /* Core values section */
+    #core-values {
+      max-width: 900px;
+      margin: 50px auto 100px;
+      padding: 0 20px;
+    }
+    #core-values .about-card {
       background-color: white;
       border-radius: 12px;
       padding: 30px;
-      margin-bottom: 30px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: relative;
-      z-index: 1; /* ensure cards appear above watermark */
     }
-
-    .about-card h3 {
-      font-size: 24px;
+    #core-values h3 {
+      font-size: 28px;
       color: #003366;
-      margin-bottom: 10px;
+      margin-bottom: 25px;
+      font-weight: 700;
     }
-
-    .about-card h3 span {
+    #core-values h3 span {
       color: #fcb900;
     }
-
-    .about-card p {
-      font-size: 17px;
-      color: #444;
-      line-height: 1.6;
-    }
-
-    /* Bottom Yellow Half Circle */
-    .bottom-circle {
-      width: 100%;
-      height: 240px;
-      background-color: #fcb900;
-      border-top-left-radius: 100% 60%;
-      border-top-right-radius: 100% 60%;
-      margin-top: 40px;
+    #core-values ul {
+      list-style: none;
+      padding: 0;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1; /* above watermark */
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #003366;
+    }
+    #core-values ul li {
+      flex: 1 1 160px;
+      background: #ffd700;
+      padding: 15px;
+      border-radius: 12px;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
-    /* Subscribe to Newsletter */
+    /* Bottom Subscribe Section */
+    .bottom-circle {
+      background-color: #002244;
+      padding: 60px 20px;
+      text-align: center;
+      border-top-left-radius: 100px;
+      border-top-right-radius: 100px;
+      margin-top: 60px;
+    }
     .subscribe-container {
       max-width: 400px;
       width: 90%;
-      padding: 20px;
-      text-align: center;
+      margin: auto;
       color: #003366;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     .subscribe-container h3 {
       font-size: 24px;
       margin-bottom: 15px;
       font-weight: 700;
-      color: #003366;
     }
-
     .subscribe-container form {
       display: flex;
       gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
     }
-
     .subscribe-container input[type="email"] {
       flex: 1 1 200px;
       padding: 10px;
@@ -216,7 +444,6 @@
       border-radius: 4px;
       outline: none;
     }
-
     .subscribe-container button {
       background-color: #0056a3;
       color: white;
@@ -227,224 +454,131 @@
       font-size: 16px;
       transition: background-color 0.3s ease;
     }
-
     .subscribe-container button:hover {
       background-color: #003d7a;
     }
+    #subscribe-message {
+      margin-top: 10px;
+      color: lightgreen;
+      display: none;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #002855;
+      text-align: center;
+      padding: 30px 20px;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+      margin-top: 50px;
+      border-top: 2px solid #ccc;
+      font-weight: bold;
+    }
+    footer h4 {
+      margin-bottom: 5px;
+      font-size: 20px;
+      color: #ffffff;
+    }
+    footer p, footer a {
+      margin: 3px 0;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    footer a:hover,
+    footer a:focus {
+      text-decoration: underline;
+    }.actions .btn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.actions .btn:hover {
+  background-color: #0056b3;
+}
 
   </style>
 </head>
 <body>
 
- <!-- Top contact info -->
-<div class="contact-info" style="text-align: left;">
-  <span>Phone: 0787110886</span>
-  <span style="float: left;">Email: bmuzatsinda@gmail.com</span>
+<!-- Top bar with contact info on the left and social media on the right -->
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #0b90a4; color: white;">
+  
+  <!-- Contact info (left) -->
+  <div style="display: flex; flex-direction: column;">
+    <span>Phone: 0787110886</span>
+    <span>Email: bmuzatsinda@gmail.com</span>
+  </div>
+
+  <!-- Social media icons (right) -->
+  <div style="display: flex; gap: 15px;">
+    <a href="#" style="color: white;" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" style="color: white;" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" style="color: white;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" style="color: white;" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+  
 </div>
 
+</div>
+
+
 <!-- Navigation bar -->
-<nav class="navbar">
-  <div class="logo">
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="logo" tabindex="0" aria-label="MuzaGraphics Logo">
     <img src="mylogo.jpg" alt="MuzaGraphics Logo" />
     <span class="brand-name">MuzaGraphics</span>
   </div>
 
   <ul class="nav-links">
-    <li><a href="index.html" onclick="closeForm()">Home</a></li>
-    <li><a href="about.html" onclick="closeForm()">About</a></li>
-    <li><a href="services.html" onclick="closeForm()">Services</a></li>
-    <li><a href="gallery.html" onclick="closeForm()">Gallery</a></li>
-    <li><a href="contact.html" onclick="closeForm()">Contact</a></li>
-  </ul>
+  <li><a href="index.html" tabindex="0">Home</a></li>
+  <li><a href="about.html" aria-current="page" tabindex="0">About</a></li>
+  <li><a href="services.html" tabindex="0">Services</a></li>
+  <li><a href="gallery.html" tabindex="0">Gallery</a></li>
+  <li><a href="contact.html" tabindex="0">Contact</a></li>
+</ul>
 
-  <div class="actions">
-    <input type="search" placeholder="Search..." />
-    <button class="btn" onclick="showForm('login')">Login</button>
-    <button class="btn" onclick="showForm('register')">Register</button>
-  </div>
+<div class="actions">
+  <input type="search" placeholder="Search..." aria-label="Search the site" />
+  <a href="login.html" class="btn" style="margin-left:10px;">Login</a>
+  <a href="register.html" class="btn" style="margin-left:10px;">Register</a>
+</div>
 </nav>
 
-<!-- Modal Forms -->
-<div id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-  background-color:rgba(0,0,0,0.6); z-index:9999; display:flex; justify-content:center; align-items:center;">
-  <div id="form-content" style="background:#fff; padding:30px; border-radius:8px; width:90%; max-width:400px; position:relative;">
-    <span onclick="closeForm()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
-
-    <!-- Login -->
-    <div id="login-form" style="display:none;">
-      <h2>Login</h2>
-      <input type="email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
-      <input type="password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
-      <button type="submit" style="width:100%; padding:10px;">Login</button>
-      <p style="margin-top:10px;"><a href="#" onclick="showForm('forgot')">Forgot Password?</a></p>
-    </div>
-
-    <!-- Register -->
-<div id="register-form" style="display:none;">
-  <h2>Register</h2>
-
-  <!-- Success message -->
-  <div id="register-success" style="display:none; color: green; margin-bottom: 10px;">
-    ✅ Registered successfully!
-  </div>
-
-  <!-- Input fields -->
-  <input type="text" id="reg-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;" />
-  <input type="email" id="reg-email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
-  <input type="password" id="reg-password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
-
-  <!-- Register button -->
-  <button onclick="submitRegister()" style="width:100%; padding:10px;">Register</button>
+<!-- Blue top 3D rotating banner with About Us title -->
+<div class="top-circle rotating-box" role="banner" aria-label="About Us">
+  <h2 class="rotated-title-yellow-3d">About Us</h2>
 </div>
 
-<!-- JavaScript inside the same HTML -->
-<script>
-  function submitRegister() {
-    // Show the success message
-    document.getElementById('register-success').style.display = 'block';
 
-    // Clear form inputs (optional)
-    document.getElementById('reg-name').value = "";
-    document.getElementById('reg-email').value = "";
-    document.getElementById('reg-password').value = "";
-
-    // Hide the message after 3 seconds
-    setTimeout(() => {
-      document.getElementById('register-success').style.display = 'none';
-    }, 3000);
-  }
-</script>
-
-
-    <!-- Forgot -->
-    <div id="forgot-form" style="display:none;">
-      <h2>Reset Password</h2>
-      <input type="email" placeholder="Enter your email" required style="width:100%; padding:10px; margin:10px 0;" />
-      <button type="submit" style="width:100%; padding:10px;">Send Reset Link</button>
-    </div>
-  </div>
-</div>
-
-<!-- JavaScript -->
-<script>
-  function showForm(type) {
-    document.getElementById('form-overlay').style.display = 'flex';
-    document.getElementById('login-form').style.display = 'none';
-    document.getElementById('register-form').style.display = 'none';
-    document.getElementById('forgot-form').style.display = 'none';
-
-    if (type === 'login') {
-      document.getElementById('login-form').style.display = 'block';
-    } else if (type === 'register') {
-      document.getElementById('register-form').style.display = 'block';
-    } else if (type === 'forgot') {
-      document.getElementById('forgot-form').style.display = 'block';
-    }
-  }
-
-  function closeForm() {
-    document.getElementById('form-overlay').style.display = 'none';
-  }
-
-  // Close modal automatically on page load (in case it was left open)
-  window.onload = function () {
-    closeForm();
-  }
-</script>
-
-
-  <!-- Top Blue Half-Circle with Title -->
-  <div class="top-circle">
-    <h2><!-- Replace your current <div class="top-circle">...</div> with this: -->
-
-<div class="top-circle">
-  <div class="title-shape">
-    <h2>About Us</h2>
-  </div>
-</div>
-
-<style>
-  /* Shyira iyi CSS muri <style> yawe cyangwa muri style.css */
-  .title-shape {
-    background-color: #ffcb05; /* yellow */
-    padding: 15px 40px;
-    border-radius: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    font-weight: bold;
-    font-size: 38px;
-    color: #00509e; /* blue text */
-    letter-spacing: 3px;
-    text-transform: uppercase;
-  }
-</style>
-</h2>
-  </div><section id="founder-message" style="max-width: 900px; margin: 50px auto; padding: 0 20px;">
-  <div style="background-color: #ffcb05; color: #000; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <h3 style="font-size: 26px; text-transform: uppercase; margin-bottom: 15px; font-weight: bold;">
-      <span style="color: #0b90a4;">FOUNDER’S</span> <span style="color: #0b90a4;">MESSAGE</span>
-    </h3>
-    <p style="font-size: 18px; line-height: 1.7;">
-      Hello! I’m <strong>MUZATSINDA Barthazar</strong>, the founder and CEO of MuzaGraphics. 
-      With passion and dedication, we strive to bring world-class design solutions to our clients,
-      helping their brands shine on the global stage. Welcome to our creative journey.
-    </p>
+<!-- Founder message -->
+<section id="founder-message" aria-labelledby="founder-title">
+  <h3 id="founder-title">Founder’s Message</h3>
+  <p>
+    Welcome to MuzaGraphics, where creativity meets strategy. We are passionate about delivering
+    international-level design solutions that elevate brands and inspire audiences.
+  </p>
 </section>
-<section class="timeline-section">
-  <h3> Company <span>Timeline</span></h3>
+
+<!-- Timeline section -->
+<section class="timeline-section" aria-labelledby="timeline-title">
+  <h3 id="timeline-title">Our <span>Journey</span></h3>
   <ul class="timeline-list">
-    <li><span class="year">2019:</span> MuzaGraphics was founded with a vision to redefine African design.</li>
-    <li><span class="year">2020:</span> Expanded services to include web design and digital media.</li>
-    <li><span class="year">2022:</span> Collaborated with international clients across 5 continents.</li>
-    <li><span class="year">2024:</span> Launched new branding packages tailored for startups worldwide.</li>
-    <li><span class="year">2025:</span> Continues to innovate and deliver exceptional design experiences.</li>
+    <li><span class="year">2021</span> Founded MuzaGraphics with a vision to deliver premium design services.</li>
+    <li><span class="year">2022</span> Expanded our team and portfolio to serve clients worldwide.</li>
+    <li><span class="year">2023</span> Launched our first international campaigns and brand partnerships.</li>
+    <li><span class="year">2024</span> Recognized as a top creative agency in Africa.</li>
   </ul>
 </section>
 
-<style>
-.timeline-section {
-  background-color: #0b90a4;
-  padding: 40px 30px;
-  border-radius: 15px;
-  color: white;
-  max-width: 900px;
-  margin: 40px auto;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.timeline-section h3 {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 25px;
-}
-
-.timeline-section h3 span {
-  color: #ffe600;
-}
-
-.timeline-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.timeline-list li {
-  padding: 12px 0;
-  font-size: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: flex-start;
-}
-
-.year {
-  display: inline-block;
-  width: 80px;
-  font-weight: bold;
-  color: #ffe600;
-}
-</style>
-
- <!-- About Section -->
-<section class="about-container">
+<!-- About Section -->
+<section class="about-container" aria-label="About MuzaGraphics">
   <div class="main-card">
     <div class="card light-blue-card">
       <h3 class="blue-title">Who We Are</h3>
@@ -465,437 +599,83 @@
   </div>
 </section>
 
-<style>
-.about-container {
-  display: flex;
-  justify-content: center;
-  padding: 50px 20px;
-  background-color: #0b90a4;
-}
-
-.main-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  max-width: 850px;
-  width: 100%;
-}
-
-.card {
-  margin-bottom: 30px;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.light-blue-card {
-  background-color: #cceeff;
-}
-
-.blue-title {
-  color: #0b90a4;
-  margin-bottom: 10px;
-  font-size: 22px;
-  font-weight: bold;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.yellow-title {
-  color: #ffe600;
-  margin-bottom: 10px;
-  font-size: 22px;
-  font-weight: bold;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.card p {
-  color: white;
-  font-size: 16px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.light-blue-card p {
-  color: #000;
-}
-</style>
-
-</section>
-
-    </div><section class="unique-section">
+<!-- Unique Section -->
+<section class="unique-section" aria-label="What Makes MuzaGraphics Unique">
   <div class="container">
-   <style>
-  .rotated-title-yellow-3d {
-    color: #FFD700; /* Yellow */
-    font-weight: bold;
-    font-size: 2.5rem;
-    display: inline-block;
-    animation: spin3D 4s linear infinite;
-    transform-style: preserve-3d;
-  }
-
-  @keyframes spin3D {
-    0% {
-      transform: perspective(600px) rotateY(0deg);
-    }
-    100% {
-      transform: perspective(600px) rotateY(360deg);
-    }
-  }
-</style>
-
-<section style="background: url('Watermaker.jpg') no-repeat center center; background-size: cover; padding: 60px 20px;">
-  <h2 class="rotated-title-yellow-3d">What Makes Us Unique</h2>
-
-  <p class="intro-blue-bold">At MuzaGraphics, we go beyond aesthetics. Here’s why our clients choose us:</p>
-
-  <div class="features">
-    <div class="feature-box">
-      <h3>🌍 Globally Competitive Designs</h3>
-      <p>We deliver world-class designs that meet international standards and trends.</p>
-    </div>
-    <div class="feature-box">
-      <h3>🎨 Creativity Meets Strategy</h3>
-      <p>We merge artistic creativity with solid brand strategy for powerful outcomes.</p>
-    </div>
-    <div class="feature-box">
-      <h3>🗣️ Speaking Your Visual Language</h3>
-      <p>Our designs are clear, compelling, and communicate exactly what your audience needs to see.</p>
+    <h2 class="rotated-title-yellow-3d">What Makes Us Unique</h2>
+    <p class="intro-blue-bold">At MuzaGraphics, we go beyond aesthetics. Here’s why our clients choose us:</p>
+    <div class="features">
+      <div class="feature-box">
+        <h3>🌍 Globally Competitive Designs</h3>
+        <p>We deliver world-class designs that meet international standards and trends.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🎨 Creativity Meets Strategy</h3>
+        <p>We merge artistic creativity with solid brand strategy for powerful outcomes.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🗣️ Speaking Your Visual Language</h3>
+        <p>Our designs are clear, compelling, and communicate exactly what your audience needs to see.</p>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-
-</div>
-
-  </div>
-</section>
-
-<section id="core-values" style="max-width: 900px; margin: 50px auto 100px; padding: 0 20px;">
+<!-- Core Values -->
+<section id="core-values" aria-label="Core Values of MuzaGraphics">
   <div class="about-card">
     <h3>Our <span>Core Values</span></h3>
-    <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 20px; color: #003366;">
-      <li style="flex: 1 1 160px; background: #ffd700; padding: 15px; border-radius: 12px; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        Creativity
-      </li>
-      <li style="flex: 1 1 160px; background: #ffd700; padding: 15px; border-radius: 12px; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        Integrity
-      </li>
-      <li style="flex: 1 1 160px; background: #ffd700; padding: 15px; border-radius: 12px; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        Collaboration
-      </li>
-      <li style="flex: 1 1 160px; background: #ffd700; padding: 15px; border-radius: 12px; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        Excellence
-      </li>
-      <li style="flex: 1 1 160px; background: #ffd700; padding: 15px; border-radius: 12px; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        Innovation
-      </li>
+    <ul>
+      <li>Creativity</li>
+      <li>Integrity</li>
+      <li>Collaboration</li>
+      <li>Excellence</li>
+      <li>Innovation</li>
     </ul>
-  </div>
-
-<style>.timeline-card {
-  background-color: #0b90a4;
-  color: white;
-  padding: 25px;
-  border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-card h3 {
-  margin-bottom: 15px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.timeline {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.timeline li {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-.timeline .year {
-  width: 90px; /* Iyi niyo ituma imyaka iguma ku murongo umwe */
-  font-weight: bold;
-  color: #ffd700;
-  flex-shrink: 0;
-}
-
-  #founder-message h3, #company-timeline h3, #core-values h3 {
-    font-size: 28px;
-    color: #003366;
-    margin-bottom: 15px;
-    font-weight: 700;
-  }
-  #founder-message h3 span,
-  #company-timeline h3 span,
-  #core-values h3 span {
-    color: #fcb900; /* Yellow highlight */
-  }
-
-  #founder-message p,
-  #company-timeline ul li,
-  #core-values ul li {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
-    line-height: 1.6;
-    color: #444;
-  }
-</style>
-
-    </div>
   </div>
 </section>
 
-  </section> 
-
- <!-- Bottom Subscribe Section -->
-<div class="bottom-circle">
+<!-- Subscribe Section -->
+<div class="bottom-circle" role="region" aria-label="Subscribe to Newsletter">
   <div class="subscribe-container">
     <h3>Subscribe to Our Newsletter</h3>
-    <form id="subscribe-form">
-      <input type="email" id="email-input" placeholder="Enter your email" required />
+    <form id="subscribe-form" aria-describedby="subscribe-message" novalidate>
+      <input type="email" id="email-input" placeholder="Enter your email" required aria-required="true" aria-label="Email address" />
       <button type="submit">Subscribe</button>
     </form>
-    <p id="subscribe-message">Thanks for subscribing!</p>
+    <p id="subscribe-message" role="alert"></p>
   </div>
 </div>
-
-<style>
-.bottom-circle {
-  background-color: #002244; /* dark blue background */
-  padding: 60px 20px;
-  text-align: center;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-}
-
-.subscribe-container h3 {
-  color: white;
-  font-size: 28px;
-  font-family: 'Segoe UI', sans-serif;
-  margin-bottom: 20px;
-}
-
-.subscribe-container input[type="email"] {
-  padding: 12px;
-  width: 250px;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-.subscribe-container button {
-  padding: 12px 20px;
-  background-color: #ffe600;
-  color: #002244;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.subscribe-container button:hover {
-  background-color: #ffd700;
-}
-
-#subscribe-message {
-  margin-top: 10px;
-  color: lightgreen;
-  display: none;
-  font-size: 16px;
-}
-</style>
-
-<style>.info-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 40px 0;
-  padding: 0 20px;
-}
-
-.card.blue-card {
-  background-color: #0b90a4; /* blue background */
-  color: white;
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.card.blue-card:hover {
-  transform: translateY(-5px);
-}
-
-.card.blue-card h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.card.blue-card p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-  .bottom-circle {
-    background: radial-gradient(circle at top, #FFD700 50%, transparent 51%);
-    padding: 60px 20px 80px;
-    text-align: center;
-    border-top-left-radius: 100% 50%;
-    border-top-right-radius: 100% 50%;
-    margin-top: 60px;
-  }
-.unique-section {
-  background-color: #f9fbff;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.unique-section .container {
-  max-width: 1000px;
-  margin: auto;
-}
-
-.unique-section h2 {
-  font-size: 32px;
-  color: #003366;
-  margin-bottom: 10px;
-}
-
-.unique-section .intro {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 30px;
-}
-
-.feature-box {
-  background-color: #0b90a4; ; /* Blue background */
-  color: #ffffff; /* White text */
-  border-left: 5px solid #ffd700; /* Yellow stripe */
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  text-align: left;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.feature-box:hover {
-  transform: translateY(-5px);
-}
-
-.feature-box h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.feature-box p {
-  font-size: 16px;
-  margin: 0;
-}
-
-  .subscribe-container {
-    max-width: 500px;
-    margin: auto;
-    background: #002855;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
-
-  .subscribe-container h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .subscribe-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .subscribe-container input[type="email"] {
-    width: 250px; /* Hagizwe hato */
-    padding: 8px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-
-  .subscribe-container button {
-    background-color: #0d4a90;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    font-size: 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .subscribe-container button:hover {
-    background-color: #092f60;
-  }
-</style><style>
-  .intro-blue-bold {
-    color: #002147; /* Dark Blue */
-    font-weight: bold;
-  }
-</style>
-
 
 <script>
   document.getElementById('subscribe-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const email = document.getElementById('email-input').value;
+    const email = document.getElementById('email-input').value.trim();
     const message = document.getElementById('subscribe-message');
 
-    message.textContent = `Thank you for subscribing to MuzaGraphics, ${email}!`;
-    message.style.display = 'block';
-
-    this.reset();
-
-    setTimeout(() => {
-      message.style.display = 'none';
-    }, 3000);
+    if(email) {
+      message.textContent = `Thank you for subscribing to MuzaGraphics, ${email}!`;
+      message.style.display = 'block';
+      this.reset();
+      setTimeout(() => { message.style.display = 'none'; }, 4000);
+    }
   });
 </script>
 
+<!-- Footer -->
+<footer role="contentinfo">
+  <h4>MuzaGraphics</h4>
+  <p>International Graphic Design Studio</p>
+  <p>RWANDA / KAMONYI / RUNDA / RUYENZI</p>
+  <div>
+    <a href="https://facebook.com/YourPage" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a> |
+    <a href="https://instagram.com/YourPage" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a> |
+    <a href="https://www.youtube.com/channel/UCP-grIwZBvYN3jAYOARZ1hA" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a> |
+    <a href="https://wa.me/250787110886" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+  </div>
+  <p style="margin-top: 15px;">&copy; 2025 MuzaGraphics. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
-<!-- Footer -->
-<!-- Footer -->
-<footer style="background-color: #002855; text-align: center; padding: 30px 20px; color: #fff; font-family: 'Segoe UI', sans-serif; font-size: 14px; margin-top: 50px; border-top: 2px solid #ccc; font-weight: bold;">
-  <h4 style="margin-bottom: 5px; font-size: 20px; color: #ffffff;">MuzaGraphics</h4>
-  <p>International Graphic Design Studio</p>
-  <p>RWANDA / KAMONYI / RUNDA / RUYENZI</p>
-
-  <div style="margin: 10px 0;">
-    <a href="https://facebook.com/YourPage" target="_blank" style="text-decoration: none; margin: 0 8px; color: #3b5998;">Facebook</a> |
-    <a href="https://instagram.com/YourPage" target="_blank" style="text-decoration: none; margin: 0 8px; color: #E1306C;">Instagram</a> |
-    <a href="https://www.youtube.com/channel/UCP-grIwZBvYN3jAYOARZ1hA" target="_blank" style="text-decoration: none; margin: 0 8px; color: #FF0000;">YouTube</a> |
-    <a href="https://wa.me/250787110886" target="_blank" style="text-decoration: none; margin: 0 8px; color: #25D366;">WhatsApp</a>
-  </div>
-
-  <p style="margin-top: 15px;">&copy; 2025 MuzaGraphics. All Rights Reserved.</p>
-</footer>
