@@ -15,7 +15,77 @@
     gtag('config', 'G-5MRB0WV2BL');
   </script>
 
-  <style>.rotated-title-yellow-3d {
+  <style>/* Base nav bar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004080;
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffcc00; /* yellow hover */
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #004080;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+  .rotated-title-yellow-3d {
   color: yellow;
   font-size: 2.5rem;
   font-weight: bold;
@@ -541,26 +611,35 @@
 
 
 <!-- Navigation bar -->
+<!-- Navigation bar with Hamburger menu -->
 <nav class="navbar" role="navigation" aria-label="Main Navigation">
   <div class="logo" tabindex="0" aria-label="MuzaGraphics Logo">
     <img src="mylogo.jpg" alt="MuzaGraphics Logo" />
     <span class="brand-name">MuzaGraphics</span>
   </div>
 
-  <ul class="nav-links">
-  <li><a href="index.html" tabindex="0">Home</a></li>
-  <li><a href="about.html" aria-current="page" tabindex="0">About</a></li>
-  <li><a href="services.html" tabindex="0">Services</a></li>
-  <li><a href="gallery.html" tabindex="0">Gallery</a></li>
-  <li><a href="contact.html" tabindex="0">Contact</a></li>
-</ul>
+  <!-- Hamburger icon -->
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu" tabindex="0">
+    &#9776;
+  </div>
 
-<div class="actions">
-  <input type="search" placeholder="Search..." aria-label="Search the site" />
-  <a href="login.html" class="btn" style="margin-left:10px;">Login</a>
-  <a href="register.html" class="btn" style="margin-left:10px;">Register</a>
-</div>
+  <!-- Nav Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <div class="actions">
+    <input type="search" placeholder="Search..." aria-label="Search the site" />
+    <a href="login.html" class="btn" style="margin-left:10px;">Login</a>
+    <a href="register.html" class="btn" style="margin-left:10px;">Register</a>
+  </div>
 </nav>
+
+ 
 
 <!-- Blue top 3D rotating banner with About Us title -->
 <div class="top-circle rotating-box" role="banner" aria-label="About Us">
@@ -733,5 +812,11 @@
       alert("👋 Welcome to MuzaGraphics!\nHow can we assist you today?");
     }, 3000);
   };
+</script><script>
+  function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+  }
 </script>
+
 
