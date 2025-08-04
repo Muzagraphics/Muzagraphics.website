@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us – MuzaGraphics</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <title>Contact Us – MuzaGraphics</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 
   <!-- Google Analytics tag -->
@@ -16,51 +16,53 @@
     gtag('config', 'G-5MRB0WV2BL');
   </script>
 
-  <style>/* Shyira muri style.css */
-#form-overlay,
-#chat-popup,
-#chat-window {
-  display: none !important;
-}/* Responsive Contact Page */
-@media (max-width: 768px) {
-  .top-contact-social {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-    gap: 10px;
-  }
+  <style>
+    /* Shyira muri style.css */
+    #form-overlay,
+    #chat-popup,
+    #chat-window {
+      display: none !important;
+    }
 
-  .contact-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    font-size: 14px;
-  }
+    /* Responsive Contact Page */
+    @media (max-width: 768px) {
+      .top-contact-social {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        gap: 10px;
+      }
 
-  .social-icons {
-    justify-content: flex-start;
-  }
+      .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        font-size: 14px;
+      }
 
-  .contact-form {
-    padding: 20px 10px;
-  }
+      .social-icons {
+        justify-content: flex-start;
+      }
 
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    font-size: 16px;
-  }
+      .contact-form {
+        padding: 20px 10px;
+      }
 
-  .contact-section h2 {
-    font-size: 22px;
-    text-align: center;
-  }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        font-size: 16px;
+      }
 
-  .contact-section {
-    padding: 20px 15px;
-  }
-}
+      .contact-section h2 {
+        font-size: 22px;
+        text-align: center;
+      }
 
+      .contact-section {
+        padding: 20px 15px;
+      }
+    }
 
     body {
       margin: 0;
@@ -146,8 +148,9 @@
     .contact-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center; /* Hano nahinduye space-around → center kugira ngo bibe hagati */
       margin-bottom: 40px;
+      gap: 20px; /* Ibi byongerera intera hagati y’ama cards */
     }
 
     .contact-card {
@@ -211,10 +214,12 @@
       padding: 15px 0;
     }
 
+    /* Responsive styles */
     @media (max-width: 768px) {
       .contact-container {
         flex-direction: column;
         align-items: center;
+        justify-content: center; /* Hano nabaye sure ko center */
       }
 
       .nav-links {
@@ -224,12 +229,9 @@
     }
   </style>
 </head>
-
-</head>
 <body>
 <!-- Top bar with contact info and boxed social media icons -->
 <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #004080; color: white; font-family: 'Segoe UI', sans-serif;">
-
   <!-- Contact info (left) -->
   <div style="display: flex; flex-direction: column; font-size: 14px;">
     <span>Phone: 0787110886</span>
@@ -284,31 +286,46 @@
     <!-- Login -->
     <div id="login-form" style="display:none;">
       <h2>Login</h2>
-      <input type="email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
-      <input type="password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
+      <label for="login-email" class="sr-only">Email</label>
+      <input id="login-email" type="email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
+      <label for="login-password" class="sr-only">Password</label>
+      <input id="login-password" type="password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
       <button type="submit" style="width:100%; padding:10px;">Login</button>
       <p style="margin-top:10px;"><a href="#" onclick="showForm('forgot')">Forgot Password?</a></p>
     </div>
 
     <!-- Register -->
-<div id="register-form" style="display:none;">
-  <h2>Register</h2>
+    <div id="register-form" style="display:none;">
+      <h2>Register</h2>
 
-  <!-- Success message -->
-  <div id="register-success" style="display:none; color: green; margin-bottom: 10px;">
-    ✅ Registered successfully!
+      <!-- Success message -->
+      <div id="register-success" style="display:none; color: green; margin-bottom: 10px;">
+        ✅ Registered successfully!
+      </div>
+
+      <!-- Input fields -->
+      <label for="reg-name" class="sr-only">Full Name</label>
+      <input type="text" id="reg-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;" />
+      <label for="reg-email" class="sr-only">Email</label>
+      <input type="email" id="reg-email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
+      <label for="reg-password" class="sr-only">Password</label>
+      <input type="password" id="reg-password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
+
+      <!-- Register button -->
+      <button type="button" onclick="submitRegister()" style="width:100%; padding:10px;">Register</button>
+    </div>
+
+    <!-- Forgot -->
+    <div id="forgot-form" style="display:none;">
+      <h2>Reset Password</h2>
+      <label for="forgot-email" class="sr-only">Email</label>
+      <input id="forgot-email" type="email" placeholder="Enter your email" required style="width:100%; padding:10px; margin:10px 0;" />
+      <button type="submit" style="width:100%; padding:10px;">Send Reset Link</button>
+    </div>
   </div>
-
-  <!-- Input fields -->
-  <input type="text" id="reg-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;" />
-  <input type="email" id="reg-email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
-  <input type="password" id="reg-password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
-
-  <!-- Register button -->
-  <button onclick="submitRegister()" style="width:100%; padding:10px;">Register</button>
 </div>
 
-<!-- JavaScript inside the same HTML -->
+<!-- JavaScript -->
 <script>
   function submitRegister() {
     // Show the success message
@@ -324,20 +341,7 @@
       document.getElementById('register-success').style.display = 'none';
     }, 3000);
   }
-</script>
 
-
-    <!-- Forgot -->
-    <div id="forgot-form" style="display:none;">
-      <h2>Reset Password</h2>
-      <input type="email" placeholder="Enter your email" required style="width:100%; padding:10px; margin:10px 0;" />
-      <button type="submit" style="width:100%; padding:10px;">Send Reset Link</button>
-    </div>
-  </div>
-</div>
-
-<!-- JavaScript -->
-<script>
   function showForm(type) {
     document.getElementById('form-overlay').style.display = 'flex';
     document.getElementById('login-form').style.display = 'none';
@@ -363,32 +367,33 @@
   }
 </script>
 
+<!-- Contact Section -->
+<section id="contact">
+  <div class="contact-container">
+    <!-- Contact Form -->
+    <div class="contact-card contact-form">
+      <h2>Get in Touch</h2>
+      <form method="post" action="#">
+        <label for="name">Your Name</label>
+        <input id="name" type="text" placeholder="Your Name" required />
+        <label for="email">Your Email</label>
+        <input id="email" type="email" placeholder="Your Email" required />
+        <label for="message">Your Message</label>
+        <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="contact-container">
-      <!-- Contact Form -->
-      <div class="contact-card contact-form">
-        <h2>Get in Touch</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea rows="6" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-
-      <!-- Contact Details -->
-      <div class="contact-card contact-details">
-        <h2>Contact Details</h2>
-        <p><strong>Phone:</strong> <a href="tel:+250787110886">0787110886</a></p>
-        <p><strong>Email:</strong> <a href="mailto:bmuzatsinda@gmail.com">bmuzatsinda@gmail.com</a></p>
-        <p><strong>Location:</strong> Rwanda / Kamonyi / Ruyenzi</p>
-      </div>
-    
+    <!-- Contact Details -->
+    <div class="contact-card contact-details">
+      <h2>Contact Details</h2>
+      <p><strong>Phone:</strong> <a href="tel:+250787110886">0787110886</a></p>
+      <p><strong>Email:</strong> <a href="mailto:bmuzatsinda@gmail.com">bmuzatsinda@gmail.com</a></p>
+      <p><strong>Location:</strong> Rwanda / Kamonyi / Ruyenzi</p>
+    </div>
 
     <!-- Google Map -->
-    <div class="map-container">
+    <div class="map-container" style="width: 100%; max-width: 900px; margin: auto;">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.9932039711336!2d29.786279315347542!3d-2.223246298761503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d1122053a1790f%3A0x5d84e8a8d04062e2!2sChrishotel!5e0!3m2!1sen!2srw!4v1690046500000!5m2!1sen!2srw"
         width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
@@ -398,9 +403,10 @@
 
     <!-- Blue Half Circle -->
     <div class="half-circle"></div>
-  </section>
+  </div>
+</section>
 
- <!-- Footer -->
+<!-- Footer -->
 <footer style="background-color: #002855; text-align: center; padding: 30px 20px; color: #fff; font-family: 'Segoe UI', sans-serif; font-size: 14px; margin-top: 50px; border-top: 2px solid #ccc; font-weight: bold;">
   <h4 style="margin-bottom: 5px; font-size: 20px; color: #ffffff;">MuzaGraphics</h4>
   <p>International Graphic Design Studio</p>
@@ -412,92 +418,12 @@
     <a href="https://www.youtube.com/channel/UCP-grIwZBvYN3jAYOARZ1hA" target="_blank" style="text-decoration: none; margin: 0 8px; color: #FF0000;">YouTube</a> |
     <a href="https://wa.me/250787110886" target="_blank" style="text-decoration: none; margin: 0 8px; color: #25D366;">WhatsApp</a>
   </div>
-
-  <p style="margin-top: 15px;">&copy; 2025 MuzaGraphics. All Rights Reserved.</p>
+  <p style="font-size: 12px;">&copy; 2025 MuzaGraphics. All rights reserved.</p>
 </footer>
-<!-- WhatsApp Floating Chat -->
-<style>
-  .whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25D366;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 12px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-  }
 
-  .whatsapp-float:hover {
-    background-color: #1ebd5b;
-  }
-
-  @media screen and (max-width: 500px) {
-    .whatsapp-float {
-      font-size: 14px;
-      padding: 10px 16px;
-      bottom: 20px;
-      right: 20px;
-    }
-  }
-</style><style>
-  @media screen and (max-width: 768px) {
-    .contact-container {
-      padding: 20px;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .contact-info,
-    .contact-form {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-    }
-
-    .contact-info p {
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 22px;
-      text-align: center;
-    }
-
-    .whatsapp-float {
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-    }
-
-    .whatsapp-float img {
-      width: 100%;
-      height: auto;
-    }
-  }
-</style>
-
-
-<a href="https://wa.me/250787110886?text=Hello%20MuzaGraphics%2C%20I%20need%20your%20design%20services" 
-   class="whatsapp-float" target="_blank" 
-   aria-label="Chat with us on WhatsApp">
-  💬 Chat with us
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/250787110886" target="_blank" aria-label="WhatsApp Chat" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; padding: 15px; font-size: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); z-index: 10000;">
+  <i class="fab fa-whatsapp"></i>
 </a>
-
-<script>
-  window.onload = () => {
-    setTimeout(() => {
-      alert("👋 Welcome to MuzaGraphics!\nHow can we assist you today?");
-    }, 3000);
-  };
-</script>
+</body>
+</html>
