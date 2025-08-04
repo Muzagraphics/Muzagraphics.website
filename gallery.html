@@ -280,65 +280,247 @@ footer .socials a:hover {
 </div>
 
 
-  <!-- Navigation bar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="mylogo.jpg" alt="MuzaGraphics Logo" />
-      <span class="brand-name">MuzaGraphics</span>
+  <!-- Navigation and Modal Forms -->
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background-color: #16d23cf3;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+    position: relative;
+  }
+
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar .logo img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .navbar .brand-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+  }
+
+  .nav-links a.active {
+    border-bottom: 2px solid white;
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .actions input[type="search"] {
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .btn {
+    background: #fff;
+    color: #0b90a4;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links,
+    .actions {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: #0b90a4;
+    }
+
+    .navbar.open .nav-links,
+    .navbar.open .actions {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav-links li,
+    .actions {
+      padding: 10px 0;
+    }
+  }
+
+  /* Modal Overlay */
+  #form-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #form-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+  }
+
+  #form-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  #form-content button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #form-content span {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  #register-success {
+    color: green;
+    margin-bottom: 10px;
+  }
+</style>
+
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="mylogo.jpg" alt="MuzaGraphics Logo" />
+    <span class="brand-name">MuzaGraphics</span>
+  </div>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <div class="actions">
+    <input type="search" placeholder="Search..." />
+    <button class="btn" onclick="showForm('login')">Login</button>
+    <button class="btn" onclick="showForm('register')">Register</button>
+  </div>
+</nav>
+
+<!-- Modal Forms -->
+<div id="form-overlay">
+  <div id="form-content">
+    <span onclick="closeForm()">&times;</span>
+
+    <!-- Login -->
+    <div id="login-form" style="display:none;">
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p><a href="#" onclick="showForm('forgot')">Forgot Password?</a></p>
     </div>
 
-    <ul class="nav-links">
-      <li><a href="index.html" onclick="closeForm()">Home</a></li>
-      <li><a href="about.html" onclick="closeForm()">About</a></li>
-      <li><a href="services.html" onclick="closeForm()">Services</a></li>
-      <li><a href="gallery.html" class="active" onclick="closeForm()">Gallery</a></li>
-      <li><a href="contact.html" onclick="closeForm()">Contact</a></li>
-    </ul>
-
-    <div class="actions">
-      <input type="search" placeholder="Search..." />
-      <button class="btn" onclick="showForm('login')">Login</button>
-      <button class="btn" onclick="showForm('register')">Register</button>
+    <!-- Register -->
+    <div id="register-form" style="display:none;">
+      <h2>Register</h2>
+      <div id="register-success" style="display:none;">✅ Registered successfully!</div>
+      <input type="text" id="reg-name" placeholder="Full Name" required />
+      <input type="email" id="reg-email" placeholder="Email" required />
+      <input type="password" id="reg-password" placeholder="Password" required />
+      <button onclick="submitRegister()">Register</button>
     </div>
-  </nav>
 
-  <!-- Modal Forms -->
-  <div id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-    background-color:rgba(0,0,0,0.6); z-index:9999; display:flex; justify-content:center; align-items:center;">
-    <div id="form-content" style="background:#fff; padding:30px; border-radius:8px; width:90%; max-width:400px; position:relative;">
-      <span onclick="closeForm()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
+    <!-- Forgot -->
+    <div id="forgot-form" style="display:none;">
+      <h2>Reset Password</h2>
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Send Reset Link</button>
+    </div>
+  </div>
+</div>
 
-      <!-- Login -->
-      <div id="login-form" style="display:none;">
-        <h2>Login</h2>
-        <input type="email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
-        <input type="password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
-        <button type="submit" style="width:100%; padding:10px;">Login</button>
-        <p style="margin-top:10px;"><a href="#" onclick="showForm('forgot')">Forgot Password?</a></p>
-      </div>
+<script>
+  function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("open");
+  }
 
-      <!-- Register -->
-      <div id="register-form" style="display:none;">
-        <h2>Register</h2>
+  function showForm(form) {
+    document.getElementById("form-overlay").style.display = "flex";
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("register-form").style.display = "none";
+    document.getElementById("forgot-form").style.display = "none";
 
-        <!-- Success message -->
-        <div id="register-success" style="display:none; color: green; margin-bottom: 10px;">
-          ✅ Registered successfully!
-        </div>
+    if (form === "login") {
+      document.getElementById("login-form").style.display = "block";
+    } else if (form === "register") {
+      document.getElementById("register-form").style.display = "block";
+    } else if (form === "forgot") {
+      document.getElementById("forgot-form").style.display = "block";
+    }
+  }
 
-        <input type="text" id="reg-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;" />
-        <input type="email" id="reg-email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
-        <input type="password" id="reg-password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
+  function closeForm() {
+    document.getElementById("form-overlay").style.display = "none";
+  }
 
-        <button onclick="submitRegister()" style="width:100%; padding:10px;">Register</button>
-      </div>
+  function submitRegister() {
+    document.getElementById("register-success").style.display = "block";
+    setTimeout(() => {
+      closeForm();
+      document.getElementById("register-success").style.display = "none";
+    }, 2000);
+  }
+</script>
 
-      <!-- Forgot -->
-      <div id="forgot-form" style="display:none;">
-        <h2>Reset Password</h2>
-        <input type="email" placeholder="Enter your email" required style="width:100%; padding:10px; margin:10px 0;" />
-        <button type="submit" style="width:100%; padding:10px;">Send Reset Link</button>
-      </div>
     </div>
   </div>
 

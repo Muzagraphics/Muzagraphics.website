@@ -321,8 +321,13 @@
     <span>MuzaGraphics</span>
   </div>
 
+  <!-- Hamburger icon for mobile -->
+  <div class="hamburger" tabindex="0" aria-label="Toggle menu" onclick="toggleMenu()">
+    &#9776;
+  </div>
+
   <div class="nav-menu">
-    <ul class="menu">
+    <ul class="menu" id="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html" aria-current="page">Services</a></li>
@@ -338,8 +343,8 @@
 </nav>
 
 <!-- Login Form -->
-<div id="login-form" class="form-popup">
-  <form class="form-container">
+<div id="login-form" class="form-popup" style="display:none;">
+  <form class="form-container" onsubmit="event.preventDefault();">
     <h2>Login</h2>
     <input type="text" placeholder="Username or Email" required />
     <input type="password" placeholder="Password" required />
@@ -350,8 +355,8 @@
 </div>
 
 <!-- Register Form -->
-<div id="register-form" class="form-popup">
-  <form class="form-container">
+<div id="register-form" class="form-popup" style="display:none;">
+  <form class="form-container" onsubmit="event.preventDefault();">
     <h2>Register</h2>
     <input type="text" placeholder="Full Name" required />
     <input type="email" placeholder="Email" required />
@@ -359,6 +364,215 @@
     <button type="submit">Register</button>
     <button type="button" class="cancel" onclick="toggleForm('register-form')">Close</button>
   </form>
+</div>
+
+<style>
+  /* Basic Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Nav container */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #16d23cf3; /* yellowish */
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    color: #0056a3;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #0056a3;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  /* Hamburger - only visible on small screens */
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Menu */
+  .nav-menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    white-space: nowrap;
+  }
+  ul.menu li a {
+    text-decoration: none;
+    color: #0056a3;
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom: 3px;
+    transition: color 0.3s, border-bottom 0.3s;
+  }
+  ul.menu li a:hover,
+  ul.menu li a:focus,
+  ul.menu li a[aria-current="page"] {
+    color: #003366;
+    border-bottom: 2px solid #003366;
+  }
+
+  /* Right side login/register */
+  .nav-right {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+  }
+  .nav-right a {
+    text-decoration: none;
+    color: #0056a3;
+    background-color: white;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: 700;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-size: 16px;
+  }
+  .nav-right a:hover,
+  .nav-right a:focus {
+    background-color: #e6b800;
+    color: #003366;
+    box-shadow: 0 0 8px rgba(230,184,0,0.7);
+  }
+
+  /* Login/Register forms */
+  .form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0056a3;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1100;
+    max-width: 320px;
+    width: 90%;
+    color: white;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-container h2 {
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ffe600;
+  }
+  .form-container input {
+    margin-bottom: 12px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  .form-container button {
+    background-color: #ffe600;
+    color: #004080;
+    font-weight: 700;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .form-container button.cancel {
+    background-color: #004080;
+    color: white;
+  }
+  .form-container a {
+    color: #ffe600;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* Responsive for mobile */
+  @media (max-width: 768px) {
+    .nav-menu {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      background-color: #16d23cf3;
+      width: 100%;
+      height: calc(100vh - 60px);
+      overflow-y: auto;
+      flex-direction: column;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      padding-top: 20px;
+      z-index: 1050;
+    }
+
+    .nav-menu.active {
+      transform: translateX(0);
+    }
+
+    ul.menu {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-right {
+      display: none; /* hide login/register on mobile in nav bar, you can adapt if want */
+    }
+
+    .hamburger {
+      display: block;
+      color: #0056a3;
+    }
+  }
+</style>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('active');
+  }
+
+  function toggleForm(formId) {
+    const form = document.getElementById(formId);
+    const isVisible = form.style.display === 'block';
+
+    // Hide all forms
+    document.querySelectorAll('.form-popup').forEach(f => {
+      f.style.display = 'none';
+    });
+
+    if (!isVisible) {
+      form.style.display = 'block';
+    } else {
+      form.style.display = 'none';
+    }
+  }
+</script>
+
 </div>
 
 <!-- Style and Script -->
