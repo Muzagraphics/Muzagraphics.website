@@ -830,7 +830,58 @@
   .nav-links.show {
     display: flex;
   }
+}.menu-icon {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  margin-left: auto; /* menu icon iburyo */
 }
+
+/* Desktop na desktop nini: menu igaragara horizontally iburyo */
+.nav-links {
+  display: flex !important;  /* kugira ngo itazihirwa na display:none muri media queries */
+  gap: 20px;
+  list-style: none;
+  background: transparent;
+  position: static;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end; /* menu iburyo */
+  align-items: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none; /* ifungwe default */
+    flex-direction: column;
+    background-color: #004080; /* ubururu bwimbitse */
+    position: fixed; /* ibure umwanya wose hejuru */
+    top: 0;
+    right: 0;
+    width: 100vw; /* ifate uburebure bwose bw'ijisho */
+    height: 100vh; /* ifate uburebure bwose bw'ijisho */
+    padding-top: 60px; /* hejuru hakiri umwanya w'ikibuto cya menu */
+    z-index: 9999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li a {
+    font-size: 1.5rem;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+  }
+}
+
 
 </style>
 
@@ -1042,7 +1093,10 @@
 
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('show');
-  });
+  });function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('show');
+}
+
 </script>
 
 
