@@ -689,21 +689,8 @@
 
   <!-- Contact info (left) -->
   <div style="display: flex; flex-direction: column; font-size: 14px;">
-   <style>
-  .top-header {
-    background-color: #0056A3; /* Ubururu bwerurutse */
-    color: white;
-    padding: 8px 0;
-    font-size: 14px;
-    font-family: 'Segoe UI', sans-serif;
-    text-align: center;
-  }
-</style>
-
-<div class="top-header">
-  📞 Call us: 0787110886 &nbsp; | &nbsp; 📧 Email: bmuzatsinda@gmail.com
-</div>
-
+    <span>Phone: 0787110886</span>
+    <span>Email: bmuzatsinda@gmail.com</span>
   </div><div class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu" tabindex="0">
   &#9776;
 </div>
@@ -764,59 +751,52 @@
   </div>
 </nav>
 
-<!-- ROTATING TEXT BAR WITH 3D EFFECT -->
-<style>
-  .rotating-bar {
-    background-color: #0b90a4;
-    color: white;
-    text-align: center;
-    padding: 12px 0;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    perspective: 500px;
-    overflow: hidden;
-  }
-
-  .rotating-text {
-    display: inline-block;
-    animation: rotate3D 4s linear infinite;
-    transform-style: preserve-3d;
-  }
-
-  @keyframes rotate3D {
-    0% {
-      transform: rotateY(0deg);
-    }
-    100% {
-      transform: rotateY(360deg);
-    }
-  }
-</style>
-
-<div class="rotating-bar">
-  <span class="rotating-text">About Us</span>
+<!-- ROTATING TEXT BAR -->
+<div style="background-color: #0b90a4; color: white; text-align: center; padding: 10px 0; font-size: 18px; font-weight: bold; font-family: Arial, sans-serif;">
+  <span id="rotating-text">About Us</span>
 </div>
 
+<!-- Hamburger icon (for mobile) -->
+<div class="menu-toggle" onclick="toggleMenu()" style="cursor: pointer; display: none;">
+  <span style="font-size: 24px;">&#9776;</span> <!-- Unicode hamburger icon -->
 </div>
 
-<!-- JS for optional toggle & rotation effect -->
+<!-- Navigation Links -->
+<ul id="navLinks" style="display: none; flex-direction: column; gap: 10px; margin-top: 10px; list-style: none; padding-left: 0;">
+  <li><a href="index.html" style="color: #005b9f; text-decoration: none;">Home</a></li>
+  <li><a href="about.html" style="color: #005b9f; text-decoration: none;">About</a></li>
+  <li><a href="services.html" style="color: #005b9f; text-decoration: none;">Services</a></li>
+  <li><a href="gallery.html" style="color: #005b9f; text-decoration: none;">Gallery</a></li>
+  <li><a href="contact.html" style="color: #005b9f; text-decoration: none;">Contact</a></li>
+</ul>
+
+<!-- JavaScript for toggle -->
 <script>
-  // Responsive hamburger toggle (if needed)
   function toggleMenu() {
     const nav = document.getElementById("navLinks");
-    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+    const style = window.getComputedStyle(nav);
+    if (style.display === "none") {
+      nav.style.display = "flex";
+    } else {
+      nav.style.display = "none";
+    }
   }
 
-  // Optional: Rotation animation (visual effect)
-  const text = document.getElementById('rotating-text');
-  let angle = 0;
-  setInterval(() => {
-    angle += 1;
-    text.style.transform = `rotate(${angle}deg)`;
-  }, 50);
-</script>
+  // Auto-show hamburger icon only on small screens
+  function handleResize() {
+    const toggle = document.querySelector('.menu-toggle');
+    if (window.innerWidth <= 768) {
+      toggle.style.display = "block"; // show hamburger
+      document.getElementById("navLinks").style.display = "none"; // hide menu by default
+    } else {
+      toggle.style.display = "none"; // hide hamburger
+      document.getElementById("navLinks").style.display = "flex"; // show menu normally
+    }
+  }
 
+  window.addEventListener("resize", handleResize);
+  window.addEventListener("load", handleResize);
+</script>
 
 <!-- Rest of your page content ... -->
 
