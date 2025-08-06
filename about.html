@@ -831,21 +831,40 @@
   <li><a href="contact.html">Contact</a></li>
 </ul>
 
-<!-- Search + Login/Register -->
-<div class="actions">
+<!-- Search + Login/Register (hidden on mobile) -->
+<div class="actions hide-on-mobile">
   <input type="search" placeholder="Search..." aria-label="Search the site" />
   <a href="login.html" class="btn">Login</a>
   <a href="register.html" class="btn">Register</a>
 </div>
 
 <style>
-  /* Hides the .actions div on screens smaller than 768px (phones) */
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .actions input[type="search"] {
+    padding: 5px;
+  }
+
+  .actions a.btn {
+    margin-left: 10px;
+    background-color: #005b9f;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+
+  /* Hide on screen smaller than 768px */
   @media (max-width: 768px) {
-    .actions {
-      display: none;
+    .hide-on-mobile {
+      display: none !important;
     }
   }
 </style>
+
 
 <style>
   /* Navigation menu - always visible */
