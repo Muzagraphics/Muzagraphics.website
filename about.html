@@ -16,7 +16,63 @@
     gtag('config', 'G-5MRB0WV2BL');
   </script>
 
-  <style>/* Navigation */
+  <style>/* Navigation default */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b90a4;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #0b90a4;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+  /* Navigation */
     nav {
       background-color: #16d23cf3;
       display: flex;
@@ -822,13 +878,27 @@
   }
 </style>
 
-<!-- Navigation Links -->
-<ul class="nav-links" id="navLinks">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="services.html" aria-current="page">Services</a></li>
-  <li><a href="gallery.html">Gallery</a></li>
-  <li><a href="contact.html">Contact</a></li>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="logo">
+    
+  </div>
+
+  <!-- Hamburger Icon -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+    ☰
+  </button>
+
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" aria-current="page">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
 </ul>
 
 <!-- Search + Login/Register (hidden on mobile) -->
@@ -931,7 +1001,15 @@
     angle += 1;
     text.style.transform = `rotate(${angle}deg)`;
   }, 50);
+</script><script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
 </script>
+
 
 
 <!-- Rest of your page content ... -->
