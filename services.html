@@ -288,16 +288,28 @@
 </head>
 <body>
 
-  <!-- Top bar with contact info and boxed social media icons -->
+ <!-- ===== TOP CONTACT BAR ===== -->
 <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #004080; color: white; font-family: 'Segoe UI', sans-serif;">
-
   <!-- Contact info (left) -->
-  <div style="display: flex; flex-direction: column; font-size: 14px;">
-    <span>Phone: 0787110886</span>
-    <span>Email: bmuzatsinda@gmail.com</span>
+  <div style="font-size: 14px;">
+   <style>
+  .top-header {
+    background-color: #0056A3; /* Ubururu bwerurutse */
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+</style>
+
+<div class="top-header">
+  📞 Call us: 0787110886 &nbsp; | &nbsp; 📧 Email: bmuzatsinda@gmail.com
+</div>
+
   </div>
 
-  <!-- Social media icons (right) with white boxes -->
+  <!-- Social media icons (right) -->
   <div style="display: flex; gap: 8px;">
     <a href="#" aria-label="Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: white; border: 1px solid #004080; border-radius: 4px; color: #004080; font-size: 16px;">
       <i class="fab fa-facebook-f"></i>
@@ -314,56 +326,78 @@
   </div>
 </div>
 
-<!-- Navigation bar -->
-<nav class="nav">
-  <div class="logo">
-    <img src="mylogo.jpg" alt="MuzaGraphics Logo" />
-    <span>MuzaGraphics</span>
+<!-- ===== MAIN NAVIGATION ===== -->
+<nav class="navbar" role="navigation" aria-label="Main Navigation" style="background-color: #16d23cf3; padding: 10px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-family: Arial, sans-serif;">
+  <!-- Logo and brand -->
+  <div class="logo" style="display: flex; align-items: center;">
+    <img src="mylogo.jpg" alt="MuzaGraphics Logo" style="height: 40px; margin-right: 10px;" />
+    <span class="brand-name" style="color: #005b9f; font-size: 24px; font-weight: bold;">MuzaGraphics</span>
   </div>
 
-  <!-- Hamburger icon for mobile -->
-  <div class="hamburger" tabindex="0" aria-label="Toggle menu" onclick="toggleMenu()">
+  <!-- Hamburger (optional on mobile) -->
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu" tabindex="0" style="font-size: 26px; cursor: pointer; display: none;">
     &#9776;
   </div>
 
-  <div class="nav-menu">
-    <ul class="menu" id="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html" aria-current="page">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="navLinks" style="list-style: none; display: flex; gap: 15px; padding: 0; margin: 0;">
+    <li><a href="index.html" style="color: #005b9f; text-decoration: none;">Home</a></li>
+    <li><a href="about.html" style="color: #005b9f; text-decoration: none;">About</a></li>
+    <li><a href="services.html" aria-current="page" style="color: #005b9f; text-decoration: none;">Services</a></li>
+    <li><a href="gallery.html" style="color: #005b9f; text-decoration: none;">Gallery</a></li>
+    <li><a href="contact.html" style="color: #005b9f; text-decoration: none;">Contact</a></li>
+  </ul>
 
-  <div class="nav-right">
-    <a href="#" onclick="toggleForm('login-form')">Login</a>
-    <a href="#" onclick="toggleForm('register-form')">Register</a>
+  <!-- Login/Register -->
+  <div class="actions" style="display: flex; align-items: center; gap: 10px;">
+    <input type="search" placeholder="Search..." aria-label="Search the site" style="padding: 5px;" />
+    <a href="login.html" style="background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Login</a>
+    <a href="register.html" style="background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Register</a>
   </div>
 </nav>
 
-<!-- Login Form -->
-<div id="login-form" class="form-popup" style="display:none;">
-  <form class="form-container" onsubmit="event.preventDefault();">
-    <h2>Login</h2>
-    <input type="text" placeholder="Username or Email" required />
-    <input type="password" placeholder="Password" required />
-    <button type="submit">Login</button>
-    <a href="#">Forgot password?</a>
-    <button type="button" class="cancel" onclick="toggleForm('login-form')">Close</button>
-  </form>
+<!-- ===== ROTATING TEXT BAR: ABOUT US ===== -->
+<style>
+  .rotating-bar {
+    background-color: #0b90a4;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    perspective: 500px;
+    overflow: hidden;
+  }
+
+  .rotating-text {
+    display: inline-block;
+    animation: rotate3D 4s linear infinite;
+    transform-style: preserve-3d;
+  }
+
+  @keyframes rotate3D {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+</style>
+
+<div class="rotating-bar">
+  <span class="rotating-text">Our Services</span>
 </div>
 
-<!-- Register Form -->
-<div id="register-form" class="form-popup" style="display:none;">
-  <form class="form-container" onsubmit="event.preventDefault();">
-    <h2>Register</h2>
-    <input type="text" placeholder="Full Name" required />
-    <input type="email" placeholder="Email" required />
-    <input type="password" placeholder="Password" required />
-    <button type="submit">Register</button>
-    <button type="button" class="cancel" onclick="toggleForm('register-form')">Close</button>
-  </form>
+<!-- JS for hamburger toggle (if needed) -->
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+  }
+</script>
+
 </div>
 
 <style>

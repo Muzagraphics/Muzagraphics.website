@@ -234,8 +234,20 @@
 <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #004080; color: white; font-family: 'Segoe UI', sans-serif;">
   <!-- Contact info (left) -->
   <div style="display: flex; flex-direction: column; font-size: 14px;">
-    <span>Phone: 0787110886</span>
-    <span>Email: bmuzatsinda@gmail.com</span>
+    <style>
+  .top-header {
+    background-color: #0056A3; /* Ubururu bwerurutse */
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+</style>
+
+<div class="top-header">
+  📞 Call us: 0787110886 &nbsp; | &nbsp; 📧 Email: bmuzatsinda@gmail.com
+</div>
   </div>
 
   <!-- Social media icons (right) with white boxes -->
@@ -255,117 +267,86 @@
   </div>
 </div>
 
-<!-- Navigation bar -->
-<nav class="navbar">
-  <div class="logo">
-    <img src="mylogo.jpg" alt="MuzaGraphics Logo" />
-    <span class="brand-name">MuzaGraphics</span>
-  </div>
-
-  <ul class="nav-links">
-    <li><a href="index.html" onclick="closeForm()">Home</a></li>
-    <li><a href="about.html" onclick="closeForm()">About</a></li>
-    <li><a href="services.html" onclick="closeForm()">Services</a></li>
-    <li><a href="gallery.html" onclick="closeForm()">Gallery</a></li>
-    <li><a href="contact.html" onclick="closeForm()">Contact</a></li>
-  </ul>
-
-  <div class="actions">
-    <input type="search" placeholder="Search..." />
-    <button class="btn" onclick="showForm('login')">Login</button>
-    <button class="btn" onclick="showForm('register')">Register</button>
-  </div>
-</nav>
-
-<!-- Modal Forms -->
-<div id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-  background-color:rgba(0,0,0,0.6); z-index:9999; display:flex; justify-content:center; align-items:center;">
-  <div id="form-content" style="background:#fff; padding:30px; border-radius:8px; width:90%; max-width:400px; position:relative;">
-    <span onclick="closeForm()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
-
-    <!-- Login -->
-    <div id="login-form" style="display:none;">
-      <h2>Login</h2>
-      <label for="login-email" class="sr-only">Email</label>
-      <input id="login-email" type="email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
-      <label for="login-password" class="sr-only">Password</label>
-      <input id="login-password" type="password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
-      <button type="submit" style="width:100%; padding:10px;">Login</button>
-      <p style="margin-top:10px;"><a href="#" onclick="showForm('forgot')">Forgot Password?</a></p>
-    </div>
-
-
-    <!-- Register -->
-    <div id="register-form" style="display:none;">
-      <h2>Register</h2>
-
-      <!-- Success message -->
-      <div id="register-success" style="display:none; color: green; margin-bottom: 10px;">
-        ✅ Registered successfully!
-      </div>
-
-      <!-- Input fields -->
-      <label for="reg-name" class="sr-only">Full Name</label>
-      <input type="text" id="reg-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;" />
-      <label for="reg-email" class="sr-only">Email</label>
-      <input type="email" id="reg-email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;" />
-      <label for="reg-password" class="sr-only">Password</label>
-      <input type="password" id="reg-password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;" />
-
-      <!-- Register button -->
-      <button type="button" onclick="submitRegister()" style="width:100%; padding:10px;">Register</button>
-    </div>
-
-    <!-- Forgot -->
-    <div id="forgot-form" style="display:none;">
-      <h2>Reset Password</h2>
-      <label for="forgot-email" class="sr-only">Email</label>
-      <input id="forgot-email" type="email" placeholder="Enter your email" required style="width:100%; padding:10px; margin:10px 0;" />
-      <button type="submit" style="width:100%; padding:10px;">Send Reset Link</button>
-    </div>
+<!-- ===== TOP CONTACT BAR ===== -->
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #004080; color: white; font-family: 'Segoe UI', sans-serif;">
+  <!-- Contact info (left) -->
+  <div style="font-size: 14px;">
+    
   </div>
 </div>
 
-<!-- JavaScript -->
-<script>
-  function submitRegister() {
-    // Show the success message
-    document.getElementById('register-success').style.display = 'block';
+<!-- ===== MAIN NAVIGATION ===== -->
+<nav class="navbar" role="navigation" aria-label="Main Navigation" style="background-color: #16d23cf3; padding: 10px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-family: Arial, sans-serif;">
+  <!-- Logo and brand -->
+  <div class="logo" style="display: flex; align-items: center;">
+    <img src="mylogo.jpg" alt="MuzaGraphics Logo" style="height: 40px; margin-right: 10px;" />
+    <span class="brand-name" style="color: #005b9f; font-size: 24px; font-weight: bold;">MuzaGraphics</span>
+  </div>
 
-    // Clear form inputs (optional)
-    document.getElementById('reg-name').value = "";
-    document.getElementById('reg-email').value = "";
-    document.getElementById('reg-password').value = "";
+  <!-- Hamburger (optional on mobile) -->
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu" tabindex="0" style="font-size: 26px; cursor: pointer; display: none;">
+    &#9776;
+  </div>
 
-    // Hide the message after 3 seconds
-    setTimeout(() => {
-      document.getElementById('register-success').style.display = 'none';
-    }, 3000);
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="navLinks" style="list-style: none; display: flex; gap: 15px; padding: 0; margin: 0;">
+    <li><a href="index.html" style="color: #005b9f; text-decoration: none;">Home</a></li>
+    <li><a href="about.html" style="color: #005b9f; text-decoration: none;">About</a></li>
+    <li><a href="services.html" aria-current="page" style="color: #005b9f; text-decoration: none;">Services</a></li>
+    <li><a href="gallery.html" style="color: #005b9f; text-decoration: none;">Gallery</a></li>
+    <li><a href="contact.html" style="color: #005b9f; text-decoration: none;">Contact</a></li>
+  </ul>
+
+  <!-- Login/Register -->
+  <div class="actions" style="display: flex; align-items: center; gap: 10px;">
+    <input type="search" placeholder="Search..." aria-label="Search the site" style="padding: 5px;" />
+    <a href="login.html" style="background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Login</a>
+    <a href="register.html" style="background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Register</a>
+  </div>
+</nav>
+
+<!-- ===== ROTATING TEXT BAR: ABOUT US ===== -->
+<style>
+  .rotating-bar {
+    background-color: #0b90a4;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    perspective: 500px;
+    overflow: hidden;
   }
 
-  function showForm(type) {
-    document.getElementById('form-overlay').style.display = 'flex';
-    document.getElementById('login-form').style.display = 'none';
-    document.getElementById('register-form').style.display = 'none';
-    document.getElementById('forgot-form').style.display = 'none';
+  .rotating-text {
+    display: inline-block;
+    animation: rotate3D 4s linear infinite;
+    transform-style: preserve-3d;
+  }
 
-    if (type === 'login') {
-      document.getElementById('login-form').style.display = 'block';
-    } else if (type === 'register') {
-      document.getElementById('register-form').style.display = 'block';
-    } else if (type === 'forgot') {
-      document.getElementById('forgot-form').style.display = 'block';
+  @keyframes rotate3D {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
     }
   }
+</style>
 
-  function closeForm() {
-    document.getElementById('form-overlay').style.display = 'none';
-  }
+<div class="rotating-bar">
+  <span class="rotating-text">Our Contact</span>
+</div>
 
-  // Close modal automatically on page load (in case it was left open)
-  window.onload = function () {
-    closeForm();
+<!-- JS for hamburger toggle (if needed) -->
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
   }
+</script>
+
 </script>
 
 <!-- Contact Section -->
