@@ -822,6 +822,7 @@
   }
 </style>
 
+<!-- Navigation Links -->
 <ul class="nav-links" id="navLinks">
   <li><a href="index.html">Home</a></li>
   <li><a href="about.html">About</a></li>
@@ -830,41 +831,55 @@
   <li><a href="contact.html">Contact</a></li>
 </ul>
 
- <style>
-  /* Style ya container ya actions */
-  .actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  /* Hiding actions kuri screen ntoya (phone) */
-  @media (max-width: 768px) {
-    .actions {
-      display: none;
-    }
-  }
-
-  /* Style z’ibyuma byo muri actions (inputs na links) */
-  .actions input[type="search"] {
-    padding: 5px;
-  }
-
-  .actions a.btn {
-    margin-left: 10px;
-    background-color: #005b9f;
-    color: darkblue;
-    padding: 5px 10px;
-    text-decoration: none;
-  }
-</style>
-
 <!-- Search + Login/Register -->
 <div class="actions">
   <input type="search" placeholder="Search..." aria-label="Search the site" />
   <a href="login.html" class="btn">Login</a>
   <a href="register.html" class="btn">Register</a>
 </div>
+
+<style>
+  /* Navigation menu - always visible */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-links li a {
+    color: #005b9f;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* Actions container */
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Hide actions on small screens (phones) */
+  @media (max-width: 768px) {
+    .actions {
+      display: none;
+    }
+  }
+
+  /* Style for search input */
+  .actions input[type="search"] {
+    padding: 5px;
+  }
+
+  /* Style for login/register buttons */
+  .actions a.btn {
+    background-color: #005b9f;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+</style>
 
 </nav>
 
