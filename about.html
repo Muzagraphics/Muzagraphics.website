@@ -684,52 +684,96 @@
 </head>
 <body>
 
-<!-- Top bar with contact info and boxed social media icons -->
-<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #004080; color: white; font-family: 'Segoe UI', sans-serif;">
+<!-- TOP BLUE BAR -->
+<style>
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #004080;
+    color: white;
+    padding: 6px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 9999;
+  }
 
-  <!-- Contact info (left) -->
-  <div style="display: flex; flex-direction: column; font-size: 14px;">
-    <span>Phone: 0787110886</span>
-    <span>Email: bmuzatsinda@gmail.com</span>
-  </div><div class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu" tabindex="0">
-  &#9776;
-</div>
+  .top-bar .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
 
+  .top-bar .social-icons {
+    display: flex;
+    gap: 8px;
+  }
 
-  <!-- Social media icons (right) with small blue boxes and white icons -->
-  <div style="display: flex; gap: 8px;">
-    <a href="#" aria-label="Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: #004080; border: 1px solid white; border-radius: 4px; color: white; font-size: 16px;">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="#" aria-label="Twitter" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: #004080; border: 1px solid white; border-radius: 4px; color: white; font-size: 16px;">
-      <i class="fab fa-twitter"></i>
-    </a>
-    <a href="#" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: #004080; border: 1px solid white; border-radius: 4px; color: white; font-size: 16px;">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="#" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: #004080; border: 1px solid white; border-radius: 4px; color: white; font-size: 16px;">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
+  .top-bar .social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 4px;
+    color: #004080;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .top-bar .social-icons a:hover {
+    background-color: #002950;
+    color: white;
+    transition: 0.3s;
+  }
+
+  body {
+    padding-top: 48px; /* space to avoid overlap with top bar */
+  }
+
+  @media screen and (max-width: 600px) {
+    .top-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .top-bar .social-icons {
+      align-self: flex-end;
+    }
+  }
+</style>
+
+<div class="top-bar">
+  <div class="contact-info">
+    📞 Call us: 0787110886 &nbsp; | &nbsp; 📧 Email: bmuzatsinda@gmail.com
   </div>
+  <div class="social-icons">
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+
 
 </div>
 
-  
-</div>
-
-</div>
-
-  <!-- TOP BAR: Phone & Email -->
-
-<!-- MAIN NAVIGATION SECTION -->
+<!-- ===== MAIN NAVIGATION ===== -->
 <nav class="navbar" role="navigation" aria-label="Main Navigation" style="background-color: #16d23cf3; padding: 10px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-family: Arial, sans-serif;">
-  <!-- Logo -->
+  <!-- Logo and brand -->
   <div class="logo" style="display: flex; align-items: center;">
     <img src="mylogo.jpg" alt="MuzaGraphics Logo" style="height: 40px; margin-right: 10px;" />
     <span class="brand-name" style="color: #005b9f; font-size: 24px; font-weight: bold;">MuzaGraphics</span>
   </div>
 
-  <!-- Hamburger icon -->
+  <!-- Hamburger (optional on mobile) -->
   <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu" tabindex="0" style="font-size: 26px; cursor: pointer; display: none;">
     &#9776;
   </div>
@@ -737,18 +781,48 @@
   <!-- Navigation Links -->
   <ul class="nav-links" id="navLinks" style="list-style: none; display: flex; gap: 15px; padding: 0; margin: 0;">
     <li><a href="index.html" style="color: #005b9f; text-decoration: none;">Home</a></li>
-    <li><a href="about.html" aria-current="page" style="color: #005b9f; text-decoration: none;">About</a></li>
-    <li><a href="services.html" style="color: #005b9f; text-decoration: none;">Services</a></li>
+    <li><a href="about.html" style="color: #005b9f; text-decoration: none;">About</a></li>
+    <li><a href="services.html" aria-current="page" style="color: #005b9f; text-decoration: none;">Services</a></li>
     <li><a href="gallery.html" style="color: #005b9f; text-decoration: none;">Gallery</a></li>
     <li><a href="contact.html" style="color: #005b9f; text-decoration: none;">Contact</a></li>
   </ul>
 
-  <!-- Search + Login/Register -->
-  <div class="actions" style="display: flex; align-items: center; gap: 10px;">
-    <input type="search" placeholder="Search..." aria-label="Search the site" style="padding: 5px;" />
-    <a href="login.html" class="btn" style="margin-left:10px; background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Login</a>
-    <a href="register.html" class="btn" style="margin-left:10px; background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Register</a>
-  </div>
+  <style>
+  /* Style ya container ya actions */
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Hiding actions kuri screen ntoya (phone) */
+  @media (max-width: 768px) {
+    .actions {
+      display: none;
+    }
+  }
+
+  /* Style z’ibyuma byo muri actions (inputs na links) */
+  .actions input[type="search"] {
+    padding: 5px;
+  }
+
+  .actions a.btn {
+    margin-left: 10px;
+    background-color: #005b9f;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+</style>
+
+<!-- Search + Login/Register -->
+<div class="actions">
+  <input type="search" placeholder="Search..." aria-label="Search the site" />
+  <a href="login.html" class="btn">Login</a>
+  <a href="register.html" class="btn">Register</a>
+</div>
+
 </nav>
 
 <!-- ROTATING TEXT BAR -->
@@ -756,47 +830,23 @@
   <span id="rotating-text">About Us</span>
 </div>
 
-<!-- Hamburger icon (for mobile) -->
-<div class="menu-toggle" onclick="toggleMenu()" style="cursor: pointer; display: none;">
-  <span style="font-size: 24px;">&#9776;</span> <!-- Unicode hamburger icon -->
-</div>
-
-<!-- Navigation Links -->
-<ul id="navLinks" style="display: none; flex-direction: column; gap: 10px; margin-top: 10px; list-style: none; padding-left: 0;">
-  <li><a href="index.html" style="color: #005b9f; text-decoration: none;">Home</a></li>
-  <li><a href="about.html" style="color: #005b9f; text-decoration: none;">About</a></li>
-  <li><a href="services.html" style="color: #005b9f; text-decoration: none;">Services</a></li>
-  <li><a href="gallery.html" style="color: #005b9f; text-decoration: none;">Gallery</a></li>
-  <li><a href="contact.html" style="color: #005b9f; text-decoration: none;">Contact</a></li>
-</ul>
-
-<!-- JavaScript for toggle -->
+<!-- JS for optional toggle & rotation effect -->
 <script>
+  // Responsive hamburger toggle (if needed)
   function toggleMenu() {
     const nav = document.getElementById("navLinks");
-    const style = window.getComputedStyle(nav);
-    if (style.display === "none") {
-      nav.style.display = "flex";
-    } else {
-      nav.style.display = "none";
-    }
+    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
   }
 
-  // Auto-show hamburger icon only on small screens
-  function handleResize() {
-    const toggle = document.querySelector('.menu-toggle');
-    if (window.innerWidth <= 768) {
-      toggle.style.display = "block"; // show hamburger
-      document.getElementById("navLinks").style.display = "none"; // hide menu by default
-    } else {
-      toggle.style.display = "none"; // hide hamburger
-      document.getElementById("navLinks").style.display = "flex"; // show menu normally
-    }
-  }
-
-  window.addEventListener("resize", handleResize);
-  window.addEventListener("load", handleResize);
+  // Optional: Rotation animation (visual effect)
+  const text = document.getElementById('rotating-text');
+  let angle = 0;
+  setInterval(() => {
+    angle += 1;
+    text.style.transform = `rotate(${angle}deg)`;
+  }, 50);
 </script>
+
 
 <!-- Rest of your page content ... -->
 

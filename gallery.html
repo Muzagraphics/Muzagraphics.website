@@ -326,12 +326,42 @@ footer .socials a:hover {
     <li><a href="contact.html" style="color: #005b9f; text-decoration: none;">Contact</a></li>
   </ul>
 
-  <!-- Login/Register -->
-  <div class="actions" style="display: flex; align-items: center; gap: 10px;">
-    <input type="search" placeholder="Search..." aria-label="Search the site" style="padding: 5px;" />
-    <a href="login.html" style="background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Login</a>
-    <a href="register.html" style="background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Register</a>
-  </div>
+  <style>
+  /* Style ya container ya actions */
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Hiding actions kuri screen ntoya (phone) */
+  @media (max-width: 768px) {
+    .actions {
+      display: none;
+    }
+  }
+
+  /* Style z’ibyuma byo muri actions (inputs na links) */
+  .actions input[type="search"] {
+    padding: 5px;
+  }
+
+  .actions a.btn {
+    margin-left: 10px;
+    background-color: #005b9f;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+</style>
+
+<!-- Search + Login/Register -->
+<div class="actions">
+  <input type="search" placeholder="Search..." aria-label="Search the site" />
+  <a href="login.html" class="btn">Login</a>
+  <a href="register.html" class="btn">Register</a>
+</div>
+
 </nav>
 
 <!-- ===== ROTATING TEXT BAR: ABOUT US ===== -->

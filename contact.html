@@ -234,11 +234,13 @@
 <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #004080; color: white; font-family: 'Segoe UI', sans-serif;">
   <!-- Contact info (left) -->
   <div style="display: flex; flex-direction: column; font-size: 14px;">
-    <span>Phone: 0787110886</span>
-    <span>Email: bmuzatsinda@gmail.com</span>
+    <div class="top-header">
+  📞 Call us: 0787110886 &nbsp; | &nbsp; 📧 Email: bmuzatsinda@gmail.com
+</div>
+
   </div>
 
-  <!-- Social media icons (right) with white boxes -->
+  <!-- Social media icons (right) -->
   <div style="display: flex; gap: 8px;">
     <a href="#" aria-label="Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: white; border: 1px solid #004080; border-radius: 4px; color: #004080; font-size: 16px;">
       <i class="fab fa-facebook-f"></i>
@@ -252,14 +254,6 @@
     <a href="#" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: white; border: 1px solid #004080; border-radius: 4px; color: #004080; font-size: 16px;">
       <i class="fab fa-linkedin-in"></i>
     </a>
-  </div>
-</div>
-
-<!-- ===== TOP CONTACT BAR ===== -->
-<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #004080; color: white; font-family: 'Segoe UI', sans-serif;">
-  <!-- Contact info (left) -->
-  <div style="font-size: 14px;">
-    
   </div>
 </div>
 
@@ -285,12 +279,42 @@
     <li><a href="contact.html" style="color: #005b9f; text-decoration: none;">Contact</a></li>
   </ul>
 
-  <!-- Login/Register -->
-  <div class="actions" style="display: flex; align-items: center; gap: 10px;">
-    <input type="search" placeholder="Search..." aria-label="Search the site" style="padding: 5px;" />
-    <a href="login.html" style="background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Login</a>
-    <a href="register.html" style="background-color: #005b9f; color: white; padding: 5px 10px; text-decoration: none;">Register</a>
-  </div>
+  <style>
+  /* Style ya container ya actions */
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Hiding actions kuri screen ntoya (phone) */
+  @media (max-width: 768px) {
+    .actions {
+      display: none;
+    }
+  }
+
+  /* Style z’ibyuma byo muri actions (inputs na links) */
+  .actions input[type="search"] {
+    padding: 5px;
+  }
+
+  .actions a.btn {
+    margin-left: 10px;
+    background-color: #005b9f;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+</style>
+
+<!-- Search + Login/Register -->
+<div class="actions">
+  <input type="search" placeholder="Search..." aria-label="Search the site" />
+  <a href="login.html" class="btn">Login</a>
+  <a href="register.html" class="btn">Register</a>
+</div>
+
 </nav>
 
 <!-- ===== ROTATING TEXT BAR: ABOUT US ===== -->
