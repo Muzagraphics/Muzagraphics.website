@@ -803,7 +803,35 @@
     .top-bar .social-icons {
       align-self: flex-end;
     }
+  }.menu-icon {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Show hamburger only on phone */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
   }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #007BFF;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
 </style>
 
 <!-- ===== TOP CONTACT BAR ===== -->
@@ -889,13 +917,20 @@
     ☰
   </button>
 
-  <!-- Navigation Links -->
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" aria-current="page">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="contact.html">Contact</a></li>
+ <!-- Mobile Menu Button (hamburger) -->
+<div class="menu-icon" onclick="toggleMenu()">
+  <i class="fa fa-bars"></i>
+</div>
+
+<!-- Navigation Links -->
+<ul class="nav-links" id="navLinks">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="services.html">Services</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
   </ul>
 </nav>
 
@@ -1387,7 +1422,12 @@
       }
     });
   }
+</script><script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('show');
+  }
 </script>
+
 
 </body>
 </html>
