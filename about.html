@@ -789,13 +789,46 @@
   </div>
 
   <!-- Navigation Links -->
-  <ul class="nav-links" id="navLinks" style="list-style: none; display: flex; gap: 15px; padding: 0; margin: 0;">
-    <li><a href="index.html" style="color: #005b9f; text-decoration: none;">Home</a></li>
-    <li><a href="about.html" style="color: #005b9f; text-decoration: none;">About</a></li>
-    <li><a href="services.html" aria-current="page" style="color: #005b9f; text-decoration: none;">Services</a></li>
-    <li><a href="gallery.html" style="color: #005b9f; text-decoration: none;">Gallery</a></li>
-    <li><a href="contact.html" style="color: #005b9f; text-decoration: none;">Contact</a></li>
-  </ul>
+<style>
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 15px;
+    margin: 0;
+    background-color: #16d23cf3;
+    justify-content: center;
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: #005b9f; /* default: blue for desktop */
+    transition: color 0.3s;
+  }
+
+  .nav-links li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* For small screens (phones) */
+  @media screen and (max-width: 600px) {
+    .nav-links li a {
+      color: white; /* white text on blue background for phone */
+    }
+  }
+</style>
+
+<ul class="nav-links" id="navLinks">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="services.html" aria-current="page">Services</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
 
  <style>
   /* Style ya container ya actions */
@@ -820,7 +853,7 @@
   .actions a.btn {
     margin-left: 10px;
     background-color: #005b9f;
-    color: white;
+    color: darkblue;
     padding: 5px 10px;
     text-decoration: none;
   }
