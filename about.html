@@ -15,7 +15,77 @@
     gtag('config', 'G-5MRB0WV2BL');
   </script>
 
-  <style>/* Base nav bar styles */
+  <style>/* MENU background */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #16d23cf3;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Right align actions (search/login) */
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive: hamburger menu */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #16d23cf3;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .actions {
+    display: none;
+  }
+}
+
+  /* Base nav bar styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -755,7 +825,13 @@
       setTimeout(() => { message.style.display = 'none'; }, 4000);
     }
   });
+</script><script>
+  function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+  }
 </script>
+
 
 <!-- Footer -->
 <footer role="contentinfo" style="padding: 30px 20px; background-color: #003366; color: white; text-align: center; font-family: 'Segoe UI', sans-serif;">
