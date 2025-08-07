@@ -438,7 +438,7 @@
       max-width: 900px;
       margin: 0 auto 40px;
       padding: 30px;
-      background-color: #ffcb05;
+      background-color: #05ff44;
       color: #000;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -1056,7 +1056,35 @@
     color: white;
     padding: 5px 10px;
     text-decoration: none;
+  }#rotating-text {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: bold;
+  color: #004aad;
+  animation: rotate3d 6s linear infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@keyframes rotate3d {
+  from {
+    transform: rotateY(0deg);
   }
+  to {
+    transform: rotateY(360deg);
+  }
+}#founder-title {
+  font-weight: 700; /* bold */
+  font-size: 28px;
+  color: white; /* umuhondo wa zahabu */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* kugirango umuhondo usomeke neza */
+}
+
+
 </style>
 
 </nav>
