@@ -402,7 +402,95 @@
 @keyframes rotateText {
   0% { transform: rotateY(0deg); }
   100% { transform: rotateY(360deg); }
+}.topics-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
 }
+
+.section-heading {
+  font-size: 32px;
+  color: #0047ab;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.info-card {
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  color: #0073e6;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.info-card p {
+  font-size: 16px;
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: darkblue;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: darkblue;
+}.brand-title-container {
+  display: inline-block;
+  background: linear-gradient(to right, #f0f0f0, #ffffff);
+  padding: 15px 30px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.brand-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}.section-title-container {
+  display: inline-block;
+  background: linear-gradient(to right, #f9f9f9, #ffffff);
+  padding: 10px 25px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+
 </style>
 
 
@@ -450,7 +538,29 @@
     <div class="gallery-item">
       <img src="SCHOOL LOGO.jpg" alt="Design Sample 4" />
     </div>
+  </div><section class="topics-section">
+  <h2 class="section-heading">Explore Our Topics</h2>
+  <div class="card-container">
+    <div class="info-card">
+     <div class="brand-title-container">
+  <h2 class="brand-title">7Tips for a Strong Brand</h2>
+</div>
+
+      <p>Quick and practical design tips for everyday improvement.</p>
+      <a href="tips.html" class="btn">Learn More</a>
+    </div>
+    <div class="info-card">
+     <div class="section-title-container">
+  <h3 class="section-title">Color Psychology</h3>
+</div>
+
+      <p>Discover how psychology influences modern graphic design.</p>
+      <a href="psychology.html" class="btn">Learn More</a>
+    </div>
+    <!-- ushobora kongeramo indi card hano -->
   </div>
+</section>
+
 </section>
 
 <!-- Call to Action -->
