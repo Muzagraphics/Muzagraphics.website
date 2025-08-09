@@ -850,30 +850,121 @@
 </style>
 
 
-    <div class="faq-item">
-      <div class="faq-question"><i>?</i>What services does MuzaGraphics offer?</div>
-      <div class="faq-answer">We offer logos, flyers, posters, social media designs, branding kits, and more.</div>
-    </div>
+   <div class="faq-circle">
+  <div class="faq-item">
+    <div class="faq-question"><i>?</i>What services does MuzaGraphics offer?</div>
+    <div class="faq-answer">We offer logos, flyers, posters, social media designs, branding kits, and more.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question"><i>?</i>How long does a project take?</div>
-      <div class="faq-answer">Most designs are delivered within 2-5 business days depending on complexity.</div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-question"><i>?</i>How long does a project take?</div>
+    <div class="faq-answer">Most designs are delivered within 2-5 business days depending on complexity.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question"><i>?</i>Do you offer revisions?</div>
-      <div class="faq-answer">Yes, 2 free revisions are offered. Additional edits may require extra charges.</div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-question"><i>?</i>Do you offer revisions?</div>
+    <div class="faq-answer">Yes, 2 free revisions are offered. Additional edits may require extra charges.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question"><i>?</i>Can I order from outside Rwanda?</div>
-      <div class="faq-answer">Absolutely! We serve clients globally and communicate via WhatsApp or email.</div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-question"><i>?</i>Can I order from outside Rwanda?</div>
+    <div class="faq-answer">Absolutely! We serve clients globally and communicate via WhatsApp or email.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question"><i>?</i>How do I make payments?</div>
-      <div class="faq-answer">Payments can be made via Mobile Money, Bank Transfer, or PayPal depending on your location.</div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-question"><i>?</i>How do I make payments?</div>
+    <div class="faq-answer">Payments can be made via Mobile Money, Bank Transfer, or PayPal depending on your location.</div>
+  </div>
+</div>
+
+<style>
+.faq-circle {
+  --size: 560px;
+  --ring-width: 8px;
+  position: relative;
+  width: var(--size);
+  min-height: var(--size);
+  margin: 40px auto;
+  border-radius: 50%;
+  border: var(--ring-width) solid #FFD700;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 14px 12px;
+  margin: 8px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  width: 80%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.faq-item:hover {
+  background: #f0f8ff;
+}
+
+.faq-question {
+  font-weight: 700;
+  color: #0057A3;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.faq-question i {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e9f3ff;
+  color: #0057A3;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.4;
+  padding: 0 5px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px; /* adjust if you have longer answers */
+  padding: 10px 5px;
+}
+
+@media (max-width: 800px) {
+  .faq-circle { --size: 420px; }
+}
+@media (max-width: 480px) {
+  .faq-circle { --size: 320px; padding: 10px; }
+  .faq-circle .faq-item { width: 90%; font-size: 14px; padding: 10px; }
+}
+</style>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    item.classList.toggle('active');
+  });
+});
+</script>
+
   </div>
 
   <script>
