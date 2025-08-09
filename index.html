@@ -458,7 +458,7 @@
 }
 
 .btn:hover {
-  background-color: darkblue;
+  background-color:darkblue;
 }.brand-title-container {
   display: inline-block;
   background: linear-gradient(to right, #f0f0f0, #ffffff);
@@ -546,35 +546,406 @@
   <h2 class="brand-title">7Tips for a Strong Brand</h2>
 </div>
 
-      <p>Quick and practical design tips for everyday improvement.</p>
-      <a href="tips.html" class="btn">Learn More</a>
+    <p>Quick and practical design tips for everyday improvement.</p>
+<a href="javascript:void(0);" class="btn" onclick="toggleTips()">Learn More</a>
+
+<div id="tipsSection" style="display: none; margin-top: 15px;">
+  <ol style="list-style-type: decimal; padding-left: 20px;">
+    <li>
+      <strong style="color: #f1c40f;">Consistency:</strong>
+      <span style="font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+        Keep your colors, fonts, and design style uniform across all platforms.
+      </span>
+    </li>
+    <li>
+      <strong style="color: #f1c40f;">Simplicity:</strong>
+      <span style="font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+        Avoid clutter; use clean, simple designs for better user experience.
+      </span>
+    </li>
+    <li>
+      <strong style="color: #f1c40f;">Typography:</strong>
+      <span style="font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+        Use readable fonts and proper hierarchy (e.g., headers vs. body text).
+      </span>
+    </li>
+    <li>
+      <strong style="color: #f1c40f;">Color Psychology:</strong>
+      <span style="font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+        Choose colors that align with the emotions or actions you want your audience to feel or take.
+      </span>
+    </li>
+    <li>
+      <strong style="color: #f1c40f;">Visual Balance:</strong>
+      <span style="font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+        Make sure your layout isn’t too heavy on one side; use symmetry or white space effectively.
+      </span>
+    </li>
+    <li>
+      <strong style="color: #f1c40f;">Brand Identity:</strong>
+      <span style="font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+        Every design should reflect your brand voice and personality.
+      </span>
+    </li>
+    <li>
+      <strong style="color: #f1c40f;">Responsiveness:</strong>
+      <span style="font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+        Ensure your design looks good on all devices – mobile, tablet, and desktop.
+      </span>
+    </li>
+  </ol>
+</div>
+
     </div>
     <div class="info-card">
      <div class="section-title-container">
-  <h3 class="section-title">Color Psychology</h3>
+  <h3 class="section-title" style="color: #003366;">Color Psychology</h3>
+
 </div>
 
-      <p>Discover how psychology influences modern graphic design.</p>
-      <a href="psychology.html" class="btn">Learn More</a>
+      <p style="font-family: 'Segoe UI', sans-serif;">Quick and practical color psychology principles for better design impact.</p>
+<a href="javascript:void(0);" class="btn" onclick="toggleColorPsychology()">Learn More</a>
+
+<div id="colorPsychologySection" style="display: none; margin-top: 15px; font-family: 'Segoe UI', sans-serif;">
+  <ol style="list-style: decimal; padding-left: 20px;">
+    <li><span style="color: #FFD700; font-weight: bold;">Yellow</span> stimulates mental activity and generates energy.</li>
+    <li><span style="color: #FFD700; font-weight: bold;">Blue</span>  promotes trust and professionalism.</li>
+    <li><span style="color: #FFD700; font-weight: bold;">Red</span>  evokes urgency and excitement.</li>
+    <li><span style="color: #FFD700; font-weight: bold;">Green</span>  symbolizes health, tranquility, and nature.</li>
+    <li><span style="color: #FFD700; font-weight: bold;">Black</span> signifies sophistication and elegance.</li>
+    <li><span style="color: #FFD700; font-weight: bold;">White</span>  represents purity and simplicity.</li>
+  </ol>
+</div>
+
+    
+</div>
+
+<script>
+  function toggleColorPsychology() {
+    var section = document.getElementById("colorPsychologySection");
+    section.style.display = (section.style.display === "none") ? "block" : "none";
+  }
+</script>
+
     </div>
     <!-- ushobora kongeramo indi card hano -->
   </div>
 </section>
 
 </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ Accordion</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 20px;
+    }
 
-<!-- Call to Action -->
-<section class="cta-section">
-  <h2>Ready to Elevate Your Brand?</h2>
-  <p>Let us help you stand out with professional, international-grade design. Your brand deserves the best.</p>
-  <a href="#">Request a Free Consultation</a>
+    .faq-container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background-color: #fff;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .faq-question:hover {
+      background-color: #f0f0f0;
+    }
+
+    .faq-question i {
+      font-style: normal;
+      font-weight: bold;
+      margin-right: 15px;
+      color: #003366;
+      font-size: 22px;
+    }
+
+    .faq-question::after {
+      content: "\25BC";
+      position: absolute;
+      right: 20px;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 20px;
+      color: #333;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }.cta-star {
+  background: #f7c948 url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Star_icon_stylized.svg/2048px-Star_icon_stylized.svg.png') no-repeat center;
+  background-size: 100px;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin: 40px auto;
+  max-width: 800px;
+  position: relative;
+}
+
+.cta-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px 20px;
+  border-radius: 15px;
+}
+
+.cta-star h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.cta-star p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.cta-star a {
+  display: inline-block;
+  background-color: #0b90a4;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-star a:hover {
+  background-color: #077a89;
+}.sms-notification {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #0b90a4;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  z-index: 9999;
+  display: none;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+<div id="sms-notification" class="sms-notification">
+  <p>
+    Need any help? Click the WhatsApp icon to chat with us directly!
+  </p>
+</div>
+
+  <div class="faq-container">
+    <div style="text-align: center; perspective: 800px; margin-bottom: 30px;">
+  <h2 style="
+    display: inline-block;
+    background: linear-gradient(to right, #0066cc, #003366);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 28px;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    animation: swing3D 2.5s infinite ease-in-out;
+  ">
+    Frequently Asked Questions
+  </h2>
+</div>
+
+<style>
+@keyframes swing3D {
+  0%   { transform: rotateX(0deg); }
+  25%  { transform: rotateX(15deg); }
+  50%  { transform: rotateX(0deg); }
+  75%  { transform: rotateX(-15deg); }
+  100% { transform: rotateX(0deg); }
+}.demo-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.demo-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+  width: 220px;
+  transition: transform 0.3s;
+}
+
+.demo-card:hover {
+  transform: translateY(-5px);
+}
+
+.demo-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.demo-card h3 {
+  font-size: 18px;
+  color: #0b90a4;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}.consultation-link {
+  color: white;
+  text-decoration: underline;
+}
+
+
+</style>
+
+
+    <div class="faq-item">
+      <div class="faq-question"><i>?</i>What services does MuzaGraphics offer?</div>
+      <div class="faq-answer">We offer logos, flyers, posters, social media designs, branding kits, and more.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><i>?</i>How long does a project take?</div>
+      <div class="faq-answer">Most designs are delivered within 2-5 business days depending on complexity.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><i>?</i>Do you offer revisions?</div>
+      <div class="faq-answer">Yes, 2 free revisions are offered. Additional edits may require extra charges.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><i>?</i>Can I order from outside Rwanda?</div>
+      <div class="faq-answer">Absolutely! We serve clients globally and communicate via WhatsApp or email.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><i>?</i>How do I make payments?</div>
+      <div class="faq-answer">Payments can be made via Mobile Money, Bank Transfer, or PayPal depending on your location.</div>
+    </div>
+  </div>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script><script>
+  window.addEventListener('load', () => {
+    const sms = document.getElementById('sms-notification');
+    sms.style.display = 'block';
+
+    // Audio
+    const msg = new SpeechSynthesisUtterance
+    msg.lang = 'en-US';
+    window.speechSynthesis.speak(msg);
+
+    setTimeout(() => {
+      sms.style.display = 'none';
+    }, 7000);
+  });
+</script>
+
+
+</body>
+</html>
+
+<!-- Call to Action with Yellow Star Background -->
+<section class="cta-star">
+  <div class="cta-content">
+    <h2>Ready to Elevate Your Brand?</h2>
+    <p>Let us help you stand out with professional, international-grade design. Your brand deserves the best.</p>
+   <a href="mailto:bmuzatsinda@gmail.com?subject=Free Consultation Request&body=Hello, I would like to request a free consultation." class="consultation-link">
+  Request a Free Consultation
+</a>
+
+  </div>
+</section>
+<section style="background-color: #0b90a4; padding: 40px 20px;">
+  <h2 style="color: white; text-align: center; margin-bottom: 30px; font-family: sans-serif;">Our Partner Companies</h2>
+  
+  <div class="demo-logos">
+    <div class="demo-card">
+      <img src="GloboTech.jpg" alt="GloboTech Logo">
+      <h3>GloboTech</h3>
+    </div>
+
+    <div class="demo-card">
+      <img src="ImenaWear.jpg" alt="ImenaWear Logo">
+      <h3>ImenaWear</h3>
+    </div>
+
+    <div class="demo-card">
+      <img src="KigaliCoffee.jpg" alt="KigaliCoffee Logo">
+      <h3>KigaliCoffee</h3>
+    </div>
+
+    <div class="demo-card">
+      <img src="Uburanga Studio.jpg" alt="Uburanga Studio Logo">
+      <h3>Uburanga Studio</h3>
+    </div>
+  </div>
 </section>
 
 <!-- Footer -->
 <footer>
   <h4>MuzaGraphics</h4>
   <p>International Graphic Design Studio</p>
-  <p>RWANDA / KAMONYI / RUNDA / RUYENZI</p>
+  <p>RWANDA / KAMONYI / RUYENZI</p>
 
   <div>
     <a href="https://facebook.com/YourPage" target="_blank" class="facebook">Facebook</a> |
@@ -590,7 +961,7 @@
 <a href="https://wa.me/250787110886?text=Hello%20MuzaGraphics%2C%20I%20need%20your%20design%20services" 
    class="whatsapp-float" target="_blank" 
    aria-label="Chat with us on WhatsApp">
-  💬 Chat with us
+  <i class="fab fa-whatsapp"></i>Chat with Us
 </a>
 
 <script>
@@ -608,12 +979,17 @@
     }
   });
 
-  window.onload = () => {
-    setTimeout(() => {
-      alert("👋 Welcome to MuzaGraphics!\nHow can we assist you today?");
-    }, 3000);
-  };
+</script><script>
+  function toggleTips() {
+    var tips = document.getElementById("tipsSection");
+    if (tips.style.display === "none") {
+      tips.style.display = "block";
+    } else {
+      tips.style.display = "none";
+    }
+  }
 </script>
+
 
 </body>
 </html>
